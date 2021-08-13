@@ -1,7 +1,20 @@
 {
   "name": "@arcnovus/wet-boew-react-design-system",
-  "version": "0.1.0",
+  "version": "1.0.0-alpha",
+  "repository": "https://github.com/arcnovus/wet-boew-x.git",
+  "author": "Bill Sourour (bill.sourour@arcnovus.com)",
   "private": true,
+  "keywords": [
+    "WET",
+    "CDTS",
+    "React",
+    "React.js",
+    "ReactJS",
+    "BOEW",
+    "Web Experience Toolkit",
+    "Centrally Deployed Template Solution",
+    "Government of Canada"
+  ],
   "dependencies": {
     "@storybook/storybook-deployer": "^2.8.10",
     "@testing-library/jest-dom": "^5.11.4",

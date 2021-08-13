@@ -3,9 +3,21 @@
   "version": "1.0.0-alpha",
   "description": "Wet components for ReactJS",
   "main": "dist/index.js",
+  "repository": "https://github.com/arcnovus/wet-boew-x.git",
   "author": "Bill Sourour (bill.sourour@arcnovus.com)",
   "license": "MIT",
   "private": true,
+  "keywords": [
+    "WET",
+    "CDTS",
+    "React",
+    "React.js",
+    "ReactJS",
+    "BOEW",
+    "Web Experience Toolkit",
+    "Centrally Deployed Template Solution",
+    "Government of Canada"
+  ],
   "scripts": {
     "build": "rollup -c",
     "test": "jest",

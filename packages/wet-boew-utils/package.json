@@ -3,9 +3,18 @@
   "version": "1.0.0-alpha",
   "description": "Utils for adding CDTS to Modern JS Frameworks like React",
   "main": "dist/index.js",
+  "repository": "https://github.com/arcnovus/wet-boew-x.git",
   "author": "Bill Sourour (bill.sourour@arcnovus.com)",
   "license": "MIT",
   "private": true,
+  "keywords": [
+    "WET",
+    "CDTS",
+    "BOEW",
+    "Web Experience Toolkit",
+    "Centrally Deployed Template Solution",
+    "Government of Canada"
+  ],
   "scripts": {
     "build": "rollup -c",
     "test": "jest",

@@ -5,3 +5,8 @@ Utility functions for adding the Government of Canada's Web Experience Toolkit
 frameworks like React.
 
 Currently used by WET-BOEW-REACT.
+
+## 🚨🚨 DISCLAIMER 🚨🚨
+
+**This is an independent, experimental, open source project that is not
+officially supported or endorsed by the Government of Canada at this time.**

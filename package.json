@@ -1,0 +1,25 @@
+{
+  "name": "@arcnovus/wet-boew-x",
+  "version": "1.0.0-alpha",
+  "description": "Component libraries and utilities that bring WET-BOEW and CDTS to modern frameworks like React.js",
+  "main": "index.js",
+  "keywords": [
+    "WET",
+    "CDTS",
+    "React",
+    "React.js",
+    "ReactJS",
+    "BOEW",
+    "Web Experience Toolkit",
+    "Centrally Deployed Template Solution",
+    "Government of Canada"
+  ],
+  "repository": "https://github.com/arcdev1/wet-boew-react.git",
+  "author": "Bill Sourour <bill.sourour@arcnovus.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ]
+}

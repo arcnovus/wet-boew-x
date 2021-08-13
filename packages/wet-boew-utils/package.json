@@ -1,0 +1,34 @@
+{
+  "name": "@arcnovus/wet-boew-utils",
+  "version": "1.0.0-alpha",
+  "description": "Utils for adding CDTS to Modern JS Frameworks like React",
+  "main": "dist/index.js",
+  "author": "Bill Sourour (bill.sourour@arcnovus.com)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.2",
+    "@rollup/plugin-typescript": "^8.2.3",
+    "@types/jest": "^26.0.24",
+    "jest": "^27.0.6",
+    "jest-cli": "^27.0.6",
+    "jest-watch-typeahead": "^0.6.4",
+    "rollup": "^2.53.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-visualizer": "^5.5.2",
+    "ts-jest": "^27.0.3",
+    "tslib": "^2.3.0",
+    "typedoc": "^0.21.5",
+    "typescript": "^4.3.5"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "deepmerge": "^4.2.2"
+  }
+}

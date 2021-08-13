@@ -1,0 +1,1 @@
+export { useWetComponent } from "./useWetComponent";

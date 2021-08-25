@@ -9,8 +9,9 @@ import {
   PageTitle,
   useLngLinks,
   useLanguage,
+  Href,
 } from "@arcnovus/wet-boew-react";
-import type { Href } from "@arcnovus/wet-boew-react";
+
 export default {
   title: "Templates/Application Templates",
   component: AppTemplate,

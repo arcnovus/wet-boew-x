@@ -59,11 +59,12 @@ function augmentHandler(handler: AnchorClickHandler) {
       handleOrignialOnClick(event);
 
       if (isLanguageToggle(a) || isExternalLink(a)) {
-        return redirect(a);
+        redirect(a);
+      } else {
+        handler(a);
       }
-
-      return handler(a);
     }
+    return event;
   };
 }
 
@@ -95,7 +96,7 @@ function redirect(a: HTMLAnchorElement) {
   if (a.target?.length > 0) {
     window.open(a.href, a.target);
   } else {
-    top.location.href = a.href;
+    window.location.href = a.href;
   }
 }
 

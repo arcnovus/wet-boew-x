@@ -46,4 +46,6 @@ export type {
   SplashContentProps,
   SplashTopProps,
   TopProps,
+  Href,
+  Src,
 } from "./cdts";

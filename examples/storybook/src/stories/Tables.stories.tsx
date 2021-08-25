@@ -1,5 +1,6 @@
 import { Story } from "@storybook/react";
-import { Table, TableProps } from "@arcnovus/wet-boew-react";
+import { Table } from "@arcnovus/wet-boew-react";
+import type { TableProps } from "@arcnovus/wet-boew-react";
 
 export default {
   title: "Components/Tables",

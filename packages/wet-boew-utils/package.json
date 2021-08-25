@@ -6,7 +6,7 @@
   "repository": "https://github.com/arcnovus/wet-boew-x.git",
   "author": "Bill Sourour (bill.sourour@arcnovus.com)",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "keywords": [
     "WET",
     "CDTS",

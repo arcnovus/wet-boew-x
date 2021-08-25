@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/react";
+import { Story } from "@storybook/react";
 import { Table, TableProps } from "@arcnovus/wet-boew-react";
 
 export default {

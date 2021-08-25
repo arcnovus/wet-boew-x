@@ -1,0 +1,153 @@
+import { Meta } from "@storybook/addon-docs";
+import { PageTitle } from "@arcnovus/wet-boew-react";
+
+<Meta title="Instructions/Getting Started" />
+
+# Getting Started
+
+- [Quickstart](#quickstart)
+- [Create React App from scratch](#create-react-app-from-scratch)
+- [NextJS from Scratch](#nextjs-from-scratch)
+- [Changing the layout of your app](#changing-the-layout-of-your-app)
+
+## Quickstart
+
+The fastest way to get started is to clone this library's github repository,
+copy one of the example projects to a new folder and start editing.
+
+Current example projects include:
+
+- [wbr-cra]() – Create React App with react-router-dom and react-i18next.
+- [wbr-ssr-next]() – NextJS App with server side rendering.
+- [wbr-ssg-next]() – Static site generation using NextJS.
+
+## Create React App from scratch
+
+Open a terminal and use [Create React App (CRA)](https://create-react-app.dev/) to bootstrap a new React
+application and then install `wet-boew-react`.
+
+```bash
+npx create-react-app my-app
+cd my-app
+npm i @arcnovus/wet-boew-react
+```
+
+Open your new app with your favorite code editor and replace the contents of
+`src/App.js` with the code below:
+
+```jsx
+import {
+  DefaultTemplate,
+  PageTitle,
+  SplashTemplate,
+  WetProvider,
+  useLanguage,
+} from "@arcnovus/wet-boew-react";
+
+export default function App() {
+  const { currentLanguage } = useLanguage();
+  const labels = {
+    en: {
+      title: "My Title",
+      contents: "Hello, World!",
+    },
+    fr: {
+      title: "Mon Titre",
+      contents: "Bonjour!",
+    },
+  };
+
+  return (
+    <WetProvider>
+      {currentLanguage == null ? (
+        <SplashTemplate />
+      ) : (
+        <DefaultTemplate>
+          <PageTitle text={labels[currentLanguage].title} />
+          <p>{labels[currentLanguage].contents}</p>
+        </DefaultTemplate>
+      )}
+    </WetProvider>
+  );
+}
+```
+
+Go back to your terminal window and preview your app with the following command.
+
+```bash
+npm run start
+```
+
+## NextJS from Scratch
+
+Coming soon.
+
+```bash
+npx create-next-app
+```
+
+## Changing the layout of your app.
+
+WBR includes five core template components which can all be
+configured to achieve a variety of layouts.
+
+The included templates are:
+
+- `SplashTemplate` - the default Canada.ca language selection splash page template.
+- `DefaultTemplate` - the default Canada.ca template.
+- `DefaultSecMenuTemplate` - the default Canada.ca template with a left side navigation.
+- `AppTemplate` - the CDTS application template.
+- `AppSecMenuTemplate` - the CDTS application template with a left side navigation.
+
+To use a different template, simply import it from `"@arcnovus/wet-boew-react"`
+and wrap your page with it. For example, you could change the Getting Started
+code from above to use the App template, like so:
+
+```jsx
+import {
+  AppTemplate,
+  PageTitle,
+  SplashTemplate,
+  WetProvider,
+  useLanguage,
+} from "@arcnovus/wet-boew-react";
+
+export default function App() {
+  const { currentLanguage } = useLanguage();
+  const labels = {
+    en: {
+      title: "My Title",
+      contents: "Hello, World!",
+      appName: "My awesome app.",
+    },
+    fr: {
+      title: "Mon Titre",
+      contents: "Bonjour!",
+      appName: "Mon application merveilleux.",
+    },
+  };
+
+  return (
+    <WetProvider>
+      {currentLanguage == null ? (
+        <SplashTemplate />
+      ) : (
+        <AppTemplate
+          appName={[
+            {
+              href: "/",
+              text: labels[currentLanguage].appName,
+            },
+          ]}
+        >
+          <PageTitle text={labels[currentLanguage].title} />
+          <p>{labels[currentLanguage].contents}</p>
+        </AppTemplate>
+      )}
+    </WetProvider>
+  );
+}
+```
+
+To learn more about using these templates, see the examples in the "Templates"
+section of the left hand menu.

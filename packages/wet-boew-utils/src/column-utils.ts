@@ -42,6 +42,7 @@ export function computeColumnCssClass(props: ColumnProps) {
   const offset = computeOffset(props);
   const pull = computePull(props);
   const push = computePush(props);
+
   return `${offset} ${pull} ${push} ${span} ${props.className ?? ""}`.trim();
 }
 

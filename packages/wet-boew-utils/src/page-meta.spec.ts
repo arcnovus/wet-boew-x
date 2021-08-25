@@ -1,8 +1,8 @@
-import { setPageTitle } from "./page-meta";
+import { setDocumentTitle } from "./page-meta";
 describe("Page Meta Utils", () => {
   it('Defaults the page title to "Canada.ca"', () => {
     const oldTitle = document.title;
-    setPageTitle();
+    setDocumentTitle();
     expect(document.title).toBe("Canada.ca");
     document.title = oldTitle;
   });
@@ -10,7 +10,7 @@ describe("Page Meta Utils", () => {
     const oldTitle = document.title;
     const title = "Custom page title.";
     const expected = `${title} - Canada.ca`;
-    setPageTitle(title);
+    setDocumentTitle({ pageTitle: title });
     expect(document.title).toBe(expected);
     document.title = oldTitle;
   });

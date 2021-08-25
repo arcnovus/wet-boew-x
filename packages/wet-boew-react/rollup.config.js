@@ -1,4 +1,4 @@
-import resolve from "@rollup/plugin-node-resolve";
+import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 
@@ -17,7 +17,9 @@ export default {
     sourcemap: true,
   },
   plugins: [
-    resolve(),
+    nodeResolve({
+      browser: true,
+    }),
     commonjs(),
     typescript({
       tsconfig: "./tsconfig.json",
@@ -27,7 +29,7 @@ export default {
     terser(),
     visualizer({
       filename: "bundle-analysis.html",
-      open: true,
+      open: false,
     }),
   ],
   external: ["react", "react-dom", "jest", "jest-cli", "react/jsx-runtime"],

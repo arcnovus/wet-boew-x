@@ -25,12 +25,9 @@ export function computeCdtsScriptUrl(options: {
  */
 export async function registerWetComponent(selector: string): Promise<void> {
   if (typeof window !== "undefined") {
-    console.log(" I can haz window");
     const wet: WetBoew = (window as any).wb as WetBoew;
     const selectors = wet?.selectors ?? [];
-    console.log("can I haz wb", wet);
     if (wet && !selectors.includes(selector)) {
-      console.log("HALLO!");
       // tell WET there's a new element on the page.
       selectors.push(selector);
       // let WET do its magic.

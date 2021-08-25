@@ -1,7 +1,11 @@
-import { useLayoutEffect, useState } from "react";
-import { patchSearch, PatchSearchProps, SearchElements } from "./search-utils";
+import { useLayoutEffect } from "react";
+import {
+  patchSearch,
+  PatchSearchProps,
+  SearchElements,
+} from "@arcnovus/wet-boew-utils";
 
-export function useSearch(props: PatchSearchProps) {
+export function useSearch(props: PatchSearchProps): SearchElements {
   let searchElements = {
     searchButton: null,
     searchInput: null,

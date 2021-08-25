@@ -1,50 +1,78 @@
-import { PropsWithChildren, useEffect, useLayoutEffect, useState } from "react";
-import { LanguagePlacement, useLanguage } from "../language";
-import { injectCdtsResources, CdtsVersion, onAnchorClick } from "./cdts-utils";
-import { Cdts, CdtsContext } from "./useCdts";
-import { CdtsEnvironmentParams, WetBuilder } from ".";
+import { PropsWithChildren, useLayoutEffect, useState } from "react";
+import {
+  Cdts,
+  CdtsContext,
+  CdtsEnvironmentParams,
+  RefTopProps,
+  CdtsVersion,
+  injectCdtsResources,
+  onAnchorClick,
+  RefFooterProps,
+  RefTop,
+  RefFooter,
+} from ".";
+import { Language, useLanguage } from "../language";
 
 export function CdtsProvider({
-  children,
-  version,
-  linkHandler,
-  languagePlacement,
+  appTitle,
   cdnEnv,
   cdnPath,
+  children,
+  language,
+  linkHandler,
+  version,
+  ...props
 }: PropsWithChildren<
   {
-    version?: CdtsVersion;
+    appTitle?: string;
+    language?: Language;
     linkHandler?: (target: HTMLAnchorElement) => void;
-    languagePlacement?: LanguagePlacement;
-  } & CdtsEnvironmentParams
+    version?: CdtsVersion;
+  } & CdtsEnvironmentParams &
+    RefTopProps &
+    RefFooterProps
 >) {
   const [cdts, setCdts] = useState<Cdts | null>(null);
-  // const [wetBuilder, setWetBuilder] = useState<WetBuilder | null>(null);
-  const { currentLanguage: language } = useLanguage({
-    placement: languagePlacement ?? LanguagePlacement.PATH,
-  });
-
-  console.log({ language });
-  useEffect(() => {
+  const { currentLanguage: fallbackLanguage } = useLanguage() ?? {};
+  const isBrowserContext = typeof window !== "undefined";
+  useLayoutEffect(() => {
     if (linkHandler) {
       onAnchorClick(linkHandler);
     }
-  }, [onAnchorClick, linkHandler]);
-
-  useLayoutEffect(() => {
-    console.log("useLayoutEffect", "CdtsProvider.");
-    injectCdtsResources({ version: version ?? "run", language }).then(
-      (builder) => {
-        const oCdts = {
-          wetBuilder: builder,
+    console.log({ language, fallbackLanguage });
+    injectCdtsResources({
+      version: version ?? "run",
+      language: language ?? fallbackLanguage,
+    }).then((wetBuilder) => {
+      console.log("wetBuilder promise", wetBuilder);
+      if (wetBuilder) {
+        setCdts({
+          wetBuilder,
           cdnEnv,
           cdnPath,
-          languagePlacement,
-        };
-        setCdts(oCdts);
+          fallbackLanguage: fallbackLanguage ?? Language.EN,
+          appTitle: appTitle ?? "Canada.ca",
+        });
       }
-    );
-  }, [languagePlacement, language, cdnEnv, cdnPath, version]);
+    });
+  }, [
+    appTitle,
+    cdnEnv,
+    cdnPath,
+    language,
+    linkHandler,
+    onAnchorClick,
+    version,
+    fallbackLanguage,
+    isBrowserContext,
+    cdts?.wetBuilder,
+  ]);
 
-  return <CdtsContext.Provider value={cdts}>{children}</CdtsContext.Provider>;
+  return (
+    <CdtsContext.Provider value={cdts}>
+      <RefTop {...props}></RefTop>
+      {children}
+      <RefFooter {...props}></RefFooter>
+    </CdtsContext.Provider>
+  );
 }

@@ -1,0 +1,115 @@
+import { Meta } from "@storybook/addon-docs";
+import { PageTitle } from "@arcnovus/wet-boew-react";
+
+<Meta title="Instructions/Bilingual Support" />
+
+# Bilingual Support
+
+All the core templates include links to set the current language of the page.
+By default the English link goes to `/en/` and the _Français_ link goes to `/fr/`.
+While this works fine for demo purposes, in a real world scenario you'll want to
+exert more control over the language toggling.
+
+To use custom french and english links in the splash template set the `indexEng`
+and `indexFra` props like so:
+
+```jsx
+<SplashTemplate indexEng="/en/home/" indexFra="/fr/accueil/" />
+```
+
+For all other templates, set the `lngLinks` prop like so:
+
+```jsx
+import {
+  useLanguage,
+  useLngLinks,
+  AppTemplate,
+  Language,
+} from "@arcnovus/wet-boew-react";
+
+const { currentLanguage } = useLanguage();
+const translatedPage =
+  currentLanguage === Language.FR ? "/en/home/" : "/fr/accueil/";
+const { lngLinks } = useLngLinks({ currentLanguage, translatedPage });
+
+<AppTemplate lngLinks={lngLinks}></AppTemplate>;
+```
+
+### The useLanguage Hook
+
+The `useLanguage` hook determines the current language by examining
+the `window.location.pathname` and `window.location.search` properties of the
+current page. It expects a path containing `/en/` or `/fr/` or a search string
+containing `lang=en` or `lang=fr`. If it does not find any of these it will
+return `null`.
+
+The `useLanguage` hook will also set `document.documentElement.lang` to the
+current language when run in a browser.
+
+### The useLngLinks Hook
+
+The `useLngLinks` hook will create a `lngLinks` array that comforms to what the
+[CDTS](https://cenw-wscoe.github.io/sgdc-cdts/docs/internet-en.html#Section_top_references)
+is expecting.
+
+If you pass a `null` or `undefined` language to `useLngLinks` it will attempt
+to determine the current language using `window.location.pathname` and
+`window.location.search`. Failing that, it will default to English.
+
+Assuming English was the current language, the above example would generate the
+following `lngLinks`:
+
+```js
+lngLinks: [
+  {
+    lang: "fr",
+    href: "/fr/accueil/",
+    text: "Français",
+  },
+];
+```
+
+### Third-Party Routing Libraries
+
+If you are using a third party routing library, you can pass your own `pathname`
+and `search` properties to `useLanguage`. For example, `react-router-dom` includes
+a `useLocation` hook that will provide these values.
+
+```jsx
+import { useLocation } from "react-router-dom";
+
+const { pathname, search } = useLocation();
+const { currentLanguage } = useLanguage({ pathname, search });
+```
+
+You'll also want to explicitly set the language prop on the `<WetProvider>`
+component as well.
+
+```jsx
+<WetProvider language={currentLanguage}>
+```
+
+### Server Side Rendering
+
+If you are using a server-side rendering framework, you'll need to find another
+way of determining the current language. For example, [NextJS](https://nextjs.org)
+provides a `useRouter` hook that will return the current locale.
+
+```jsx
+import { useRouter } from "next/router";
+
+const { locale } = useRouter();
+const currentLanguage = locale.split("-")[0];
+```
+
+And again here, you'll want to explicitly set the language prop on the `<WetProvider>`
+component too.
+
+```jsx
+<WetProvider language={currentLanguage}>
+```
+
+### Advanced i18n
+
+For more robust bilingual support you may want to combine these features with
+an advanced i18n library like [react-18next](https://react.i18next.com/).

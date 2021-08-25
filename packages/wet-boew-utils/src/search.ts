@@ -24,8 +24,6 @@ export function patchSearch({
   ) as HTMLButtonElement;
 
   if (searchForm && searchInput && searchButton && clickHandler) {
-    console.log("patching search...");
-    console.log("searchInput", searchInput);
     searchForm.action = "#";
     searchForm.onsubmit = (event: Event) => event.preventDefault();
     searchButton.onclick = (e: Event) => {

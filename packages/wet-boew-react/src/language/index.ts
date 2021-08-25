@@ -1,2 +1,2 @@
-export { LanguagePlacement, Language } from "./language";
-export { useLanguage } from "./useLanguage";
+export { useLanguage, Language } from "./useLanguage";
+export { useLngLinks } from "./useLngLinks";

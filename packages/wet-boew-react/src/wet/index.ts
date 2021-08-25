@@ -1,3 +1,3 @@
 export { useWetComponent } from "./useWetComponent";
-export { useCdts } from "../cdts/useCdts";
-export { CdtsContext } from "../cdts/useCdts";
+export { registerWetComponent } from "@arcnovus/wet-boew-utils";
+export { WetProvider } from "./WetProvider";

@@ -1,137 +1,74 @@
 import type { CdtsTopParams, Href } from ".";
-
-export enum LanguagePlacement {
-  PATH = "path",
-  QUERYSTRING = "querystring",
-}
+import { inBrowser } from "./dom";
 
 export enum Language {
   EN = "en",
   FR = "fr",
 }
 
-type GetLanguageFromUrlOptions =
-  | GetLanguageFromUrlPathOptions
-  | GetLanguageFromUrlQueryStringOptions;
-
-interface GetLanguageFromUrlPathOptions {
-  placement?: LanguagePlacement.PATH;
-  fallback?: Language;
-}
-
-interface GetLanguageFromUrlQueryStringOptions {
-  placement?: LanguagePlacement.QUERYSTRING;
-  fallback?: Language;
-  queryStringKey?: string;
-}
-
-interface TranslateUrlPathOptions {
-  toLanguage: Language;
-  placement?: LanguagePlacement.PATH;
-  queryStringKey?: never;
-}
-
-interface TranslateUrlQueryStringOptions {
-  toLanguage: Language;
-  placement: LanguagePlacement.QUERYSTRING;
-  queryStringKey?: string;
-}
-
-type TranslateUrlOptions =
-  | TranslateUrlPathOptions
-  | TranslateUrlQueryStringOptions;
-export function translateUrl(
-  url: URL,
-  { toLanguage, placement, queryStringKey }: TranslateUrlOptions
-) {
-  let translatedUrl = url;
-  if (placement === LanguagePlacement.PATH) {
-    let currentLanguage = getLanguageFromPath(url);
-    if (currentLanguage != null) {
-      translatedUrl.pathname = url.pathname.replace(
-        "/" + currentLanguage,
-        toLanguage
-      );
-    } else {
-      translatedUrl.pathname = "/" + toLanguage + url.pathname;
-    }
+export function setLanguage({ language }: { language: Language }) {
+  if (inBrowser()) {
+    window.document.documentElement.lang = language;
   }
-  if (placement === LanguagePlacement.QUERYSTRING) {
-    translatedUrl.searchParams.set(queryStringKey ?? "lang", toLanguage);
-  }
-  return translatedUrl;
 }
+export function getCurrentLanguage(props?: {
+  pathname?: string;
+  search?: string;
+}) {
+  const pathname =
+    props?.pathname ?? (inBrowser() ? window.location.pathname : undefined);
 
-export function getLanguageFromUrl(
-  url: URL,
-  options?: GetLanguageFromUrlOptions
-): Language | null {
-  let currentLanguage = null;
+  const search =
+    props?.search ?? (inBrowser() ? window.location.search : undefined);
 
-  if (options?.placement === LanguagePlacement.QUERYSTRING) {
-    currentLanguage = getLanguageFromQueryString(url, options?.queryStringKey);
+  if (
+    pathname?.includes(`/${Language.EN}/`) ||
+    search?.includes(`lang=${Language.EN}`)
+  ) {
+    return Language.EN;
   }
 
-  if (options?.placement === LanguagePlacement.PATH) {
-    currentLanguage = getLanguageFromPath(url);
+  if (
+    pathname?.includes(`/${Language.FR}/`) ||
+    search?.includes(`lang=${Language.FR}`)
+  ) {
+    return Language.FR;
   }
 
-  if (options?.placement == null) {
-    currentLanguage =
-      getLanguageFromPath(url) ??
-      getLanguageFromQueryString(url) ??
-      options?.fallback ??
-      currentLanguage;
-  }
-
-  document.documentElement.lang = currentLanguage ?? Language.EN;
-
-  return currentLanguage;
+  return null;
 }
 
-export function computeLngLinks(props: {
-  languagePlacement?: LanguagePlacement;
-}): CdtsTopParams["lngLinks"] {
-  const currentUrl = new URL(window.location.href);
-  const placement = props.languagePlacement;
-  const currentLanguage = getLanguageFromUrl(currentUrl, {
-    placement,
-  });
-  const toLanguage =
-    currentLanguage === Language.FR ? Language.EN : Language.FR;
-
-  const translatedPage = translateUrl(currentUrl, {
-    placement,
-    toLanguage,
-  });
+export function computeLngLinks(
+  props: {
+    currentLanguage?: Language | null;
+    translatedPage?: Href;
+  } = {}
+): Required<CdtsTopParams["lngLinks"]> {
+  const currentLanguage =
+    props.currentLanguage ?? getCurrentLanguage() ?? Language.EN;
+  const translatedPage = getTranslatedPage({ ...props, currentLanguage });
   return [
     {
       lang: currentLanguage === Language.FR ? Language.EN : Language.FR,
-      href: translatedPage.href as Href,
+      href: translatedPage,
       text: currentLanguage === Language.FR ? "English" : "Français",
     },
   ];
 }
 
-export function setLanguage(language: Language) {
-  document.documentElement.lang = language;
-}
-
-function getLanguageFromQueryString(
-  url: URL,
-  queryStringKey?: string
-): Language | null {
-  let key = queryStringKey ?? "lang";
-  let lang = url.searchParams.get(key);
-  return isLanguage(lang) ? lang : null;
-}
-
-// TODO: Handle custom basePaths
-function getLanguageFromPath(url: URL): Language | null {
-  let lang = url.pathname.split("/")[1];
-  return isLanguage(lang) ? lang : null;
-}
-
-function isLanguage(lang: unknown): lang is Language {
-  return Object.values(Language).includes(lang as Language);
+function getTranslatedPage(
+  props: {
+    currentLanguage?: Language | null;
+    translatedPage?: Href;
+  } = {}
+) {
+  console.log(props?.translatedPage, props?.currentLanguage);
+  if (props?.translatedPage == null) {
+    console.log("No translated page");
+    if (props?.currentLanguage === Language.FR) {
+      return "/en/";
+    }
+    return "/fr/";
+  }
+  return props.translatedPage;
 }

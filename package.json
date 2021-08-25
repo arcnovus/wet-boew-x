@@ -14,6 +14,9 @@
     "Centrally Deployed Template Solution",
     "Government of Canada"
   ],
+  "scripts": {
+    "list-packages": "lerna list"
+  },
   "repository": "https://github.com/arcnovus/wet-boew-x.git",
   "author": "Bill Sourour <bill.sourour@arcnovus.com>",
   "license": "MIT",
@@ -21,5 +24,8 @@
   "workspaces": [
     "packages/*",
     "examples/*"
-  ]
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
 }

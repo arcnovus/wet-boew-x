@@ -1,0 +1,16 @@
+import { Meta } from "@storybook/addon-docs";
+import { PageTitle } from "@arcnovus/wet-boew-react";
+
+<Meta title="Instructions/Routing" />
+
+# Routing
+
+Because `wet-boew-react` uses CDTS under the hood, many of the templates will
+generate traditional anchor links like `<a href="/path">Link</a>`. These links will
+cause the browser to perform a full page reload whenever they are clicked and
+will cause any client-side application state to be lost. This is not ideal.
+
+In modern React applications we tend to want to use a client-side routing
+library like [react-router-dom](https://www.npmjs.com/package/react-router-dom).
+To accomplish this, `wet-boew-react` includes an `onAnchorClick` prop on the
+`<WetProvider>` component.

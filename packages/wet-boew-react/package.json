@@ -7,6 +7,7 @@
   "author": "Bill Sourour (bill.sourour@arcnovus.com)",
   "license": "MIT",
   "private": true,
+  "sideEffects": false,
   "keywords": [
     "WET",
     "CDTS",
@@ -44,6 +45,7 @@
   },
   "dependencies": {
     "@arcnovus/wet-boew-utils": "^1.0.0-alpha",
+    "@types/datatables.net": "^1.10.20",
     "deepmerge": "^4.2.2"
   }
 }

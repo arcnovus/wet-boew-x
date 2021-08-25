@@ -1,24 +1,36 @@
 export { onAnchorClick } from "./routing";
 export { patchSearch } from "./search";
-export { setPageTitle } from "./page-meta";
+export { setDocumentTitle } from "./page-meta";
 export { registerWetComponent } from "./wet";
+export { inBrowser } from "./dom";
 export {
   injectCdtsRefFooter,
   injectCdtsRefTop,
   injectCdtsResources,
   injectCdtsSplashTop,
-} from "./ref-injection";
+} from "./cdts-injector";
 
 export {
   Language,
-  LanguagePlacement,
   computeLngLinks,
-  getLanguageFromUrl,
+  getCurrentLanguage,
   setLanguage,
-  translateUrl,
 } from "./language";
+export { computeColumnCssClass } from "./column-utils";
+export { computeContainerCssClass } from "./container-utils";
 
-export type { CdtsVersion } from "./ref-injection";
+export type { ContainerProps, ContainerVariant } from "./container-utils";
+export type { CdtsVersion } from "./cdts-injector";
+export type { SearchHandler, SearchElements, PatchSearchProps } from "./search";
+export type {
+  ColumnSpan,
+  ColumnPosition,
+  ColumnSpanProps,
+  ColumnOffsetProps,
+  ColumnPullProps,
+  ColumnPushProps,
+  ColumnProps,
+} from "./column-utils";
 
 export interface WetBuilder {
   appFooter: (options: CdtsAppFooterParams) => string;
@@ -53,6 +65,7 @@ export interface CdtsAppTopParams extends CdtsEnvironmentParams {
   signOut?: { href: Href }[];
   menuPath?: Href;
   menuLinks?: CdtsMenuLink[];
+  topSecMenu?: boolean;
 }
 
 export interface CdtsEnvironmentParams {
@@ -64,8 +77,10 @@ export interface CdtsFooterParams extends CdtsEnvironmentParams {
   contactLinks?: {
     href: Href;
     newWindow?: boolean;
+    text?: string;
   }[];
   showFooter?: boolean;
+  showFeatures?: boolean;
 }
 
 export interface CdtsPreFooterParams extends CdtsEnvironmentParams {
@@ -83,8 +98,9 @@ export interface CdtsRefFooterParams extends CdtsEnvironmentParams {
   exitURL?: Href;
   cancelMsg?: string;
   yesMsg?: string;
+  exitMsg?: string;
   exitDomains?: string;
-  displayModal?: false;
+  displayModal?: boolean;
   webAnalytics?: boolean;
   jqueryEnv?: "external";
   isApplication?: boolean;
@@ -101,6 +117,8 @@ export interface CdtsRefTopParams extends CdtsEnvironmentParams {
 export interface CdtsSecMenuParams extends CdtsEnvironmentParams {
   sections: {
     sectionName: string;
+    sectionLink?: Href;
+    newWindow?: boolean;
     menuLinks: CdtsMenuLink[];
   }[];
 }
@@ -114,7 +132,7 @@ export interface CdtsSplashParams extends CdtsEnvironmentParams {
   nameFra?: string;
 }
 
-interface CdtsMenuLink {
+export interface CdtsMenuLink {
   href: Href;
   text: string;
   newWindow?: boolean;

@@ -1,2 +1,2 @@
 export { useSearch } from "./useSearch";
-export type { SearchHandler } from "./search-utils";
+export type { SearchHandler } from "@arcnovus/wet-boew-utils";

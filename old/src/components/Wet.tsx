@@ -519,16 +519,12 @@ export default function Wet({
     const soyScript = document.createElement("script");
     const cdtsScript = document.createElement("script");
     window.addEventListener("load", () => {
-      console.log("Load event");
       //setStyle({ display: "block" });
     });
     cdtsScript.onload = () => {
-      console.log("cdts script loaded");
       const wet = (window as any).wet;
       wet.builder.splashTop({});
       // const defTop = window.document.getElementById("def-top");
-
-      console.log(contentSplash, wet);
       if (contentSplash.current != null) {
         ((contentSplash.current as any) as HTMLDivElement).innerHTML = wet.builder.splash(
           {
@@ -541,7 +537,7 @@ export default function Wet({
           }
         );
       }
-      console.log(defTop);
+
       // defTop!.outerHTML = wet.builder.top({
       //   lngLinks: [
       //     {
@@ -575,7 +571,6 @@ export default function Wet({
     }.js`;
 
     soyScript.onload = () => {
-      console.log("soyScript Loaded");
       document.head.appendChild(cdtsScript);
     };
 

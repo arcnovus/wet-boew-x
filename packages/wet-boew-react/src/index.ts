@@ -26,7 +26,7 @@ export { Main, Nav } from "./layout";
 export { DataTable, Table } from "./tables";
 
 export type { AlertVariant } from "./alerts";
-
+export type { TableProps } from "./tables";
 export type {
   AppSecMenuTemplateProps,
   AppTemplateProps,

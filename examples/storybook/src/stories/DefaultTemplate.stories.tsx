@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import { Story, Meta } from "@storybook/react";
+
 import {
   DefaultTemplate,
   DefaultTemplateProps,
@@ -9,13 +10,9 @@ import {
   Language,
   useLanguage,
   useLngLinks,
+  Href,
 } from "@arcnovus/wet-boew-react";
-import type { Href } from "@arcnovus/wet-boew-react;
 
-// const searchOptions = {
-//   Disabled: undefined,
-//   LogSearch: console.log,
-// };
 export default {
   title: "Templates/Canada.ca theme",
   component: DefaultTemplate,

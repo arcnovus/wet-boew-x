@@ -10,7 +10,7 @@ import {
   useLngLinks,
   useLanguage,
 } from "@arcnovus/wet-boew-react";
-import { Href } from "../../../../packages/wet-boew-utils/dist";
+import type { Href } from "@arcnovus/wet-boew-react";
 export default {
   title: "Templates/Application Templates",
   component: AppTemplate,

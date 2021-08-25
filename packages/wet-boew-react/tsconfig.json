@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "../wet-boew-utils/src/cdts-utils.spec.ts"]
+  "include": ["src"]
 }

@@ -1,6 +1,6 @@
 {
   "name": "@arcnovus/wet-boew-react-storybook",
-  "version": "1.0.2-alpha.0",
+  "version": "1.0.3-alpha.0",
   "repository": "https://github.com/arcnovus/wet-boew-x.git",
   "author": "Bill Sourour (bill.sourour@arcnovus.com)",
   "private": true,
@@ -16,7 +16,7 @@
     "Government of Canada"
   ],
   "dependencies": {
-    "@arcnovus/wet-boew-react": "^1.0.2-alpha.0",
+    "@arcnovus/wet-boew-react": "^1.0.3-alpha.0",
     "@storybook/storybook-deployer": "^2.8.10",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

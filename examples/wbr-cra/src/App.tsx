@@ -6,15 +6,9 @@ import {
   useLanguage,
 } from "@arcnovus/wet-boew-react";
 import { useCallback } from "react";
-import {
-  useLocation,
-  useHistory,
-  BrowserRouter as Router,
-} from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
 export default function App() {
-  // const loc = useLocation();
-  // console.log(loc);
   const { currentLanguage } = useLanguage(useLocation());
   const history = useHistory();
   const labels = {

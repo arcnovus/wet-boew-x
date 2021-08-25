@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@arcnovus/wet-boew-react@^1.0.3-alpha.0":
-  version "1.0.3-alpha.0"
-  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-react/-/wet-boew-react-1.0.3-alpha.0.tgz#da84d688a5cc3e4674f797781f60e58fe63036f7"
-  integrity sha512-JncQbjSlC+5RX/z3xzvDsGdRSL26mFpb9bQkcCjYTrGXx1+QSWu668KIaSB6GsiY+OOfAM2ZVW5G2I5gJ/fSZw==
+"@arcnovus/wet-boew-react@^1.0.5-alpha.0":
+  version "1.0.5-alpha.0"
+  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-react/-/wet-boew-react-1.0.5-alpha.0.tgz#73afe954cb928f744bd2c478019b0bcff3e60049"
+  integrity sha512-kqNR8tDIjh7RcAtXoUXJxnOTTjPcvA93BWrISaRT30AkmRbM8e5mXITMjQyB/rRJ9AflRJXKtjtEjnyUtYJ/Pg==
   dependencies:
     "@arcnovus/wet-boew-utils" "^1.0.3-alpha.0"
     "@types/datatables.net" "^1.10.20"

@@ -3,7 +3,7 @@
   "version": "1.0.1-alpha.0",
   "description": "Utils for adding CDTS to Modern JS Frameworks like React",
   "main": "dist/index.js",
-  "repository": "https://github.com/arcnovus/wet-boew-x.git",
+  "repository": "https://github.com/arcnovus/wet-booew-x/tree/main/packages/wet-boew-utils",
   "author": "Bill Sourour (bill.sourour@arcnovus.com)",
   "license": "MIT",
   "private": false,

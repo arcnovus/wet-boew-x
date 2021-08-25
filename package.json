@@ -17,7 +17,7 @@
   "scripts": {
     "list-packages": "lerna list"
   },
-  "repository": "https://github.com/arcnovus/wet-boew-x.git",
+  "repository": "https://github.com/arcnovus/wet-booew-x",
   "author": "Bill Sourour <bill.sourour@arcnovus.com>",
   "license": "MIT",
   "private": true,

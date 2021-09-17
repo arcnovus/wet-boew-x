@@ -2,19 +2,19 @@
 # yarn lockfile v1
 
 
-"@arcnovus/wet-boew-react@^1.0.7-alpha.0":
-  version "1.0.7-alpha.0"
-  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-react/-/wet-boew-react-1.0.7-alpha.0.tgz#840e38028b10f77e70f5df0a03faaaf98a265914"
-  integrity sha512-nZ/PlsD+RYkJ1r56n9XIlA95CKldY/R5Rh/3dIRhy8g4hiJqc51A/Do5UEjiqS4ng2pKGTz/XQITX/brWIT1oQ==
+"@arcnovus/wet-boew-react@^1.0.11-alpha.0":
+  version "1.0.11-alpha.0"
+  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-react/-/wet-boew-react-1.0.11-alpha.0.tgz#35409e4649cc7d730f3537e92de95502452644d6"
+  integrity sha512-JiL/bR6CZOGhVXZ0rhp04HJVVpJLTpvRICDPvVqIgPUXmfWF/zTH6SpHjspNXJhJz6J8RsztGCofmHi5bx5vGQ==
   dependencies:
-    "@arcnovus/wet-boew-utils" "^1.0.3-alpha.0"
+    "@arcnovus/wet-boew-utils" "^1.0.4-alpha.0"
     "@types/datatables.net" "^1.10.20"
     deepmerge "^4.2.2"
 
-"@arcnovus/wet-boew-utils@^1.0.3-alpha.0":
-  version "1.0.3-alpha.0"
-  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-utils/-/wet-boew-utils-1.0.3-alpha.0.tgz#d3cb2d5f6227bf8cf1b34170f1ded8d659c4e22d"
-  integrity sha512-mhX9Fkl70jVxwPZaqE8r34gonigX2WTjj2EAyOJDGD5p+kfOoqo3Q//PvSG6lLtLps2GQF/1nJ8yjrx0XDgfjQ==
+"@arcnovus/wet-boew-utils@^1.0.4-alpha.0":
+  version "1.0.4-alpha.0"
+  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-utils/-/wet-boew-utils-1.0.4-alpha.0.tgz#87fb13662c9c21669283a309815a5c79c2dfd7aa"
+  integrity sha512-+Jm475QGylE6r+XRC9cfM8vsRgOBOq60wywcYQuPoifDhK/xjCckAfuKUSi+zUiCHoh8pN9LTC43t+UQsm73IQ==
   dependencies:
     deepmerge "^4.2.2"
 

@@ -24,10 +24,7 @@ export function patchSearch({
   const searchInput = getSearchInput();
   const searchButton = getSearchButton();
 
-  const shouldPatchSearch =
-    searchForm && searchInput && searchButton && clickHandler;
-
-  if (shouldPatchSearch) {
+  if (searchForm && searchInput && searchButton && clickHandler) {
     patchForm(searchForm);
     patchButton(searchButton, clickHandler, searchInput);
     patchPlaceholder(placeholder, searchInput);

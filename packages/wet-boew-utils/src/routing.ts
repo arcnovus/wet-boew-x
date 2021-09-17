@@ -81,7 +81,7 @@ function hasExitScript(a: HTMLAnchorElement) {
 }
 
 function isDownloadLink(a: HTMLAnchorElement) {
-  return a.download != null;
+  return Boolean(a.download?.length);
 }
 
 function handleOrignialOnClick(e: MouseEvent) {

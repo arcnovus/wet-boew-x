@@ -33,8 +33,6 @@ export function Top({
         lngLinks,
       });
       setHtml(html);
-      if (props.siteMenu !== false) {
-      }
     }
   });
   useWetComponent(".gcweb-menu");

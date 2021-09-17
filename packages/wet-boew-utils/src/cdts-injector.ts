@@ -5,7 +5,7 @@ import type {
   CdtsSplashTopParams,
 } from ".";
 
-import { Language, setLanguage } from "./language";
+import { Language } from "./language";
 import { registerWetComponent, WetBoew } from "./wet";
 
 let memoLanguage: Language | null = null;
@@ -33,9 +33,9 @@ export async function injectCdtsResources({
 
       await injectCdtsSoyScript({ version });
       injectCdtsWetScript({ version, language }).then(() => {
-        const wetBuilder = (window as any).wet.builder as WetBuilder;
-        if (wetBuilder != null) {
-          resolve(wetBuilder);
+        const builder = (window as any).wet.builder as WetBuilder;
+        if (builder != null) {
+          resolve(builder);
         }
       });
     } catch (err) {

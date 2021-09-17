@@ -13,7 +13,7 @@ import {
   Footer,
   RefFooter,
 } from "..";
-import { AfterCdts, useCdts, useDocumentTitle } from "../cdts";
+import { AfterCdts, useCdts } from "../cdts";
 import { Container, Row } from "../grids";
 import { useLngLinks } from "../language";
 import { Main } from "../layout";

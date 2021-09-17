@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from "react";
-import { AfterCdts, CdtsSplashParams, useCdts } from ".";
+import { CdtsSplashParams, useCdts } from ".";
 import { inBrowser } from "@arcnovus/wet-boew-utils";
 export type SplashContentProps = Partial<CdtsSplashParams>;
 

@@ -37,7 +37,6 @@ export function DefaultSecMenuTemplate({
   const [display, setDisplay] = useState("none");
   const languageToggle = useLngLinks({ lngLinks });
   useLayoutEffect(() => {
-    console.log("useLayoutEffect", "CdtsDefaultSecMenuTemplate.");
     if (wetBuilder) {
       setDisplay("block");
       registerWetComponent(`#secMenuMain`);

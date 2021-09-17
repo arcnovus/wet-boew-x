@@ -8,7 +8,6 @@ export function PreFooter(props: PreFooterProps) {
   const { wetBuilder, cdnEnv, cdnPath } = useCdts() ?? {};
   const [__html, setHtml] = useState("");
   useLayoutEffect(() => {
-    console.log("useLayoutEffect", "CdtsPreFooter.");
     if (wetBuilder) {
       setHtml(wetBuilder.preFooter({ ...props, cdnEnv, cdnPath }));
       if (props.showShare !== false) {

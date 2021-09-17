@@ -12,7 +12,6 @@ import { inBrowser } from "./dom";
  * already hooked to a WET-NOEW exit script (i.e. exitScript=true for
  * the current page), or if it is a download link, this function will not be run.
  */
-
 export function onAnchorClick(handler: AnchorClickHandler) {
   if (inBrowser()) {
     document.addEventListener("click", makeClickHandler(handler));

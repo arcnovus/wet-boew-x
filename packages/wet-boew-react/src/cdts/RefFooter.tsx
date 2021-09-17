@@ -7,7 +7,6 @@ export function RefFooter(props: RefFooterProps) {
 
   // WARNING: Do NOT change this to useLayoutEffect, bad things will happen.
   useEffect(() => {
-    console.log("useEffect", "CdtsRefFooter");
     if (wetBuilder) {
       injectCdtsRefFooter({
         builder: wetBuilder,

@@ -25,7 +25,6 @@ export default function App() {
   };
   const handleClick = useCallback(
     (a) => {
-      console.log("A", a.href);
       history.push(a.href.replace(window.location.origin, ""));
     },
     [history]

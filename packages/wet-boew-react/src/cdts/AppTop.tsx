@@ -8,7 +8,6 @@ export function AppTop(props: AppTopProps) {
   const { wetBuilder, cdnEnv, cdnPath } = useCdts() ?? {};
   const [__html, setHtml] = useState("");
   useLayoutEffect(() => {
-    console.log("useLayoutEffect", "CdtsAppTop");
     if (wetBuilder) {
       const html = wetBuilder.appTop({
         ...props,

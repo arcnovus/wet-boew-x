@@ -9,7 +9,6 @@ export function SecMenu(props: SecMenuProps) {
   const [__html, setHtml] = useState("");
   const { wetBuilder, cdnEnv, cdnPath } = useCdts() ?? {};
   useLayoutEffect(() => {
-    console.log("useLayoutEffect", "CdtsSecMenu");
     if (wetBuilder && wetBuilder.secmenu) {
       const html = wetBuilder.secmenu({ ...props, cdnEnv, cdnPath });
       setHtml(html);

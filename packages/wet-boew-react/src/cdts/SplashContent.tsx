@@ -18,9 +18,6 @@ export function SplashContent(props: SplashContentProps) {
     props.termsFra ?? "https://www.canada.ca/fr/transparence/avis.html";
 
   useLayoutEffect(() => {
-    console.log("useEffect", "CdtsSplashContent");
-    console.log("wetBuilder", wetBuilder);
-    console.log("window.wet", (window as any)?.wet);
     if (wetBuilder && wetBuilder.splash) {
       const html = wetBuilder.splash({
         ...props,

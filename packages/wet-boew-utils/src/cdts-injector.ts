@@ -104,7 +104,6 @@ export async function injectCdtsRefFooter({
   const html = builder.refFooter(options);
 
   document.querySelectorAll(".wb-exitscript-inited").forEach((e) => {
-    console.log(e);
     e.classList.remove("wb-exitscript-inited");
     e.classList.remove("wb-inited");
   });

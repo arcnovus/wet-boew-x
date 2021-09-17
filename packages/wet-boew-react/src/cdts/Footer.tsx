@@ -6,7 +6,6 @@ export function Footer(props: FooterProps) {
   const { wetBuilder, cdnEnv, cdnPath } = useCdts() ?? {};
   const [__html, setHtml] = useState("");
   useLayoutEffect(() => {
-    console.log("useLayoutEffect", "CdtsFooter.");
     if (wetBuilder) {
       setHtml(wetBuilder.footer({ ...props, cdnEnv, cdnPath }));
     }

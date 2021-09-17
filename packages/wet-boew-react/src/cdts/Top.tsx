@@ -25,7 +25,6 @@ export function Top({
   });
 
   useLayoutEffect(() => {
-    console.log("useLayoutEffect", "CdtsTop");
     if (wetBuilder) {
       const html = wetBuilder.top({
         ...props,

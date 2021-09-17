@@ -62,9 +62,7 @@ function getTranslatedPage(
     translatedPage?: Href;
   } = {}
 ) {
-  console.log(props?.translatedPage, props?.currentLanguage);
   if (props?.translatedPage == null) {
-    console.log("No translated page");
     if (props?.currentLanguage === Language.FR) {
       return "/en/";
     }

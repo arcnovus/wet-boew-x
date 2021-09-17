@@ -8,7 +8,6 @@ export function RefTop(props: RefTopProps) {
 
   // WARNING: Do NOT change this to useLayoutEffect, bad things will happen.
   useEffect(() => {
-    console.log("useEffect", "CdtsRefTop");
     if (wetBuilder) {
       injectCdtsRefTop({
         builder: wetBuilder,

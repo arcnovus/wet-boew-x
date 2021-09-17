@@ -39,12 +39,10 @@ export function CdtsProvider({
     if (linkHandler) {
       onAnchorClick(linkHandler);
     }
-    console.log({ language, fallbackLanguage });
     injectCdtsResources({
       version: version ?? "run",
       language: language ?? fallbackLanguage,
     }).then((wetBuilder) => {
-      console.log("wetBuilder promise", wetBuilder);
       if (wetBuilder) {
         setCdts({
           wetBuilder,

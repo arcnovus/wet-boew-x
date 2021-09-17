@@ -22,3 +22,4 @@ export function PreFooter(props: PreFooterProps) {
 
   return <div id="def-preFooter" dangerouslySetInnerHTML={{ __html }} />;
 }
+PreFooter.displayName = "PreFooter";

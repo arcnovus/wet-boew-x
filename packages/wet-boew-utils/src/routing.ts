@@ -20,29 +20,29 @@ export function onAnchorClick(handler: AnchorClickHandler) {
 
 // We memoize the handler and associated callback to avoid attaching
 // multiple handlers to every `<a>` element.
-let previousHandler: AnchorClickHandler;
-let previousAugmentedHandler: (e: MouseEvent) => void;
+let memoizedHandler: AnchorClickHandler;
+let memoizedAugmentedHandler: (e: MouseEvent) => void;
 
 function makeClickHandler(handler: AnchorClickHandler) {
   if (isNewHandler(handler)) {
     memoizeHandler(handler);
     removeOldListener();
-    previousAugmentedHandler = augmentHandler(handler);
+    memoizedAugmentedHandler = augmentHandler(handler);
   }
-  return previousAugmentedHandler;
+  return memoizedAugmentedHandler;
 }
 
 function isNewHandler(handler: AnchorClickHandler) {
-  return !Object.is(previousHandler, handler);
+  return !Object.is(memoizedHandler, handler);
 }
 
 function memoizeHandler(handler: AnchorClickHandler) {
-  previousHandler = handler;
-  return previousHandler;
+  memoizedHandler = handler;
+  return memoizedHandler;
 }
 
 function removeOldListener() {
-  document.removeEventListener("click", previousAugmentedHandler);
+  document.removeEventListener("click", memoizedAugmentedHandler);
 }
 
 function augmentHandler(handler: AnchorClickHandler) {

@@ -47,6 +47,9 @@ export default function App() {
         >
           <PageTitle text={labels[currentLanguage].title} />
           <p>{labels[currentLanguage].contents}</p>
+          <a href="/robots.txt" download="robots.txt" target="_blank">
+            Download
+          </a>
         </AppTemplate>
       )}
     </WetProvider>

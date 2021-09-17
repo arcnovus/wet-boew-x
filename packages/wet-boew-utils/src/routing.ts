@@ -1,16 +1,16 @@
 import { inBrowser } from "./dom";
 
 /**
- * Several CDTS components will inject traditional `<a>` tags (i.e. a Links)
+ * Several CDTS components will inject traditional `<a>` tags (i.e. Links)
  * for navigation but in a SPA we tend to want to handle routing ourselves.
- * This function will intercept standard a links and allow us to provided
+ * This function will intercept standard links and allow us to provided
  * our own navigation handler.
  *
  * @export
  * @param {(elem: HTMLAnchorElement) => void} handler a function that receives
  * the `<a>` element and can decide what to do with it. If the `<a>` element is
  * already hooked to a WET-NOEW exit script (i.e. exitScript=true for
- * the current page), this function will not be run.
+ * the current page), or if it is a download link, this function will not be run.
  */
 
 export function onAnchorClick(handler: AnchorClickHandler) {
@@ -55,6 +55,11 @@ function augmentHandler(handler: AnchorClickHandler) {
         return event;
       }
 
+      if (isDownloadLink(a)) {
+        console.log("Download detected. Bypassing link handler.");
+        return event;
+      }
+
       event.preventDefault();
       handleOrignialOnClick(event);
 
@@ -74,6 +79,10 @@ function isAnchorElement(el: HTMLElement): el is HTMLAnchorElement {
 
 function hasExitScript(a: HTMLAnchorElement) {
   return a.classList.contains("wb-exitscript");
+}
+
+function isDownloadLink(a: HTMLAnchorElement) {
+  return a.download != null;
 }
 
 function handleOrignialOnClick(e: MouseEvent) {

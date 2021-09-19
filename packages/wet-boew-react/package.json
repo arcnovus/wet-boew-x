@@ -45,7 +45,7 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@arcnovus/wet-boew-utils": "^1.0.14-alpha",
+    "@arcnovus/wet-boew-utils": "^1.0.15-alpha.0",
     "@types/datatables.net": "^1.10.20",
     "deepmerge": "^4.2.2"
   }

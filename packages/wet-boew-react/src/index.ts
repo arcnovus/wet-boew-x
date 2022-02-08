@@ -10,6 +10,7 @@ export {
   SplashContent,
   SplashTop,
   Top,
+  AfterCdts,
 } from "./cdts";
 export { Language, useLanguage, useLngLinks } from "./language";
 export { Heading, H1, H2, H3, H4, H5, H6, PageTitle } from "./headings";

@@ -2,21 +2,23 @@
 # yarn lockfile v1
 
 
-"@arcnovus/wet-boew-react@^1.0.15-alpha.2":
-  version "1.0.15-alpha.2"
-  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-react/-/wet-boew-react-1.0.15-alpha.2.tgz#2cc43022844a2f69ac4ecf856aa7858c805c0adb"
-  integrity sha512-DNnOlsm2yR8H1Zu1YVCkDLshjoMJB5TbMZSaCTsoFmnq/BhuCvP1bYL41x02Tv4Hfx11JDXLddfIRc7PPzjntQ==
+"@arcnovus/wet-boew-react@1.0.15-alpha.3":
+  version "1.0.15-alpha.3"
+  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-react/-/wet-boew-react-1.0.15-alpha.3.tgz#b513572fefb3de6b610119b9ebc7417e29c78713"
+  integrity sha512-lQS1U9A8MColhjB9BZR6GqEZy95z0XEWED5/DBtrZUNoQtyMPPkyflnY69XhHbSyq46Ye8qjNQwc5nkL/cHLCg==
   dependencies:
-    "@arcnovus/wet-boew-utils" "^1.0.15-aplha.2"
+    "@arcnovus/wet-boew-utils" "^1.0.15-aplha.3"
     "@types/datatables.net" "^1.10.20"
     deepmerge "^4.2.2"
+    tslib "^2.3.0"
 
-"@arcnovus/wet-boew-utils@^1.0.15-aplha.2":
-  version "1.0.15-aplha.2"
-  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-utils/-/wet-boew-utils-1.0.15-aplha.2.tgz#14b5b4e0bd3ba3904a17f70277485c1edc18bd26"
-  integrity sha512-ZwW8aKFWCaxloKXVtR2abv8V4zcnwOZ54CHjehFvImHg/yk7/OHJVH/gTY7wkllWBvFIotyn9H2/GakIhiXnaA==
+"@arcnovus/wet-boew-utils@^1.0.15-aplha.3":
+  version "1.0.15-aplha.3"
+  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-utils/-/wet-boew-utils-1.0.15-aplha.3.tgz#be0bf99900f350b27187426e829029a22ebe0167"
+  integrity sha512-3Yo3otPh8rJ10PgWVOPhZKfzVHI+xXngR+CfKHMhjnHCjOzPjX9gISO8WEiA2fP2nCwJneYPTMyoGuaZvVgXfw==
   dependencies:
     deepmerge "^4.2.2"
+    tslib "^2.3.0"
 
 "@babel/runtime-corejs3@^7.10.2":
   version "7.17.2"
@@ -1716,6 +1718,11 @@ tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
+
+tslib@^2.3.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tsutils@^3.21.0:
   version "3.21.0"

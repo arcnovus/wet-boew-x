@@ -211,8 +211,7 @@ ContactLinksPage.args = {
   title: "Contact link",
   contactLinks: [
     {
-      href:
-        "https://www.canada.ca/en/environment-climate-change/corporate/contact.html",
+      href: "https://www.canada.ca/en/environment-climate-change/corporate/contact.html",
       text: "Link",
     },
   ],

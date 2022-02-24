@@ -1,4 +1,9 @@
 {
+  "eslint.workingDirectories": [
+    "./examples/create-react-app",
+    "./examples/storybook",
+    "./examples/nextjs"
+  ],
   "git.ignoreLimitWarning": true,
   "yaml.customTags": [
     "!And",

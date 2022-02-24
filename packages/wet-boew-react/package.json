@@ -1,6 +1,6 @@
 {
   "name": "@arcnovus/wet-boew-react",
-  "version": "1.0.15-alpha.2",
+  "version": "1.0.15-alpha.3",
   "description": "Wet components for ReactJS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -48,7 +48,7 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@arcnovus/wet-boew-utils": "^1.0.15-aplha.2",
+    "@arcnovus/wet-boew-utils": "^1.0.15-aplha.3",
     "@types/datatables.net": "^1.10.20",
     "deepmerge": "^4.2.2",
     "tslib": "^2.3.0"

@@ -10,7 +10,8 @@
   "private": false,
   "sideEffects": false,
   "files": [
-    "dist/*"
+    "dist/*",
+    "node_modules/*"
   ],
   "keywords": [
     "WET",
@@ -40,7 +41,6 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-visualizer": "^5.5.2",
     "ts-jest": "^27.0.3",
-    "tslib": "^2.3.0",
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
@@ -50,6 +50,7 @@
   "dependencies": {
     "@arcnovus/wet-boew-utils": "^1.0.15-aplha.2",
     "@types/datatables.net": "^1.10.20",
-    "deepmerge": "^4.2.2"
+    "deepmerge": "^4.2.2",
+    "tslib": "^2.3.0"
   }
 }

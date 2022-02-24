@@ -7,11 +7,9 @@ import { useCurrentLanguage } from "../hooks/useCurrentLanguage";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
-import { useRouter } from "next/router";
 
 export default function Home() {
   const currentLanguage = useCurrentLanguage();
-  const router = useRouter();
   const { lngLinks } = useLngLinks({
     currentLanguage,
     translatedPage: `/${currentLanguage == "en" ? "fr" : "en"}/home/`,

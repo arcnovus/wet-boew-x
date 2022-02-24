@@ -77,13 +77,144 @@ Go back to your terminal window and preview your app with the following command.
 npm run start
 ```
 
-## NextJS from Scratch
+## NextJS from Scratch (TypeScript)
 
-Coming soon.
+1. Open a terminal and use [NextJS](https://nextjs.org/) to bootstrap a new NextJS
+   application and then install `wet-boew-react` and `next-transpile-modules`.
 
 ```bash
-npx create-next-app
+npx create-next-app my-app --typescript
+cd my-app
+npm i @arcnovus/wet-boew-react next-transpile-modules
 ```
+
+2. Open `next.config.js` with your favorite code editor and replace the contents with:
+
+```js
+/** @type {import('next').NextConfig} */
+const withTM = require("next-transpile-modules")(["@arcnovus/wet-boew-react"]);
+const nextConfig = {
+  reactStrictMode: true,
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "fr"],
+  },
+};
+module.exports = withTM(nextConfig);
+```
+
+3. Open `pages/_app.tsx` with your favorite code editor and replace the contents with:
+
+```tsx
+import type { AppProps } from "next/app";
+import { useCallback, useEffect, useState } from "react";
+import { WetProvider } from "@arcnovus/wet-boew-react";
+import { useRouter } from "next/router";
+
+function WetForNextJsAppp({ Component, pageProps }: AppProps) {
+  const [isServerSide, setIsServerSide] = useState(true);
+  const router = useRouter();
+  const currentLanguage = router.locale?.split("-")[0] ?? "en";
+  const handleLink = useCallback(
+    (a: HTMLAnchorElement) => {
+      const relativeUrl = a.href.replace(window.location.origin, "");
+      const asUrl = `/${currentLanguage}${relativeUrl}`;
+      router.push(relativeUrl, asUrl, {
+        shallow: false,
+        locale: router.locale,
+      });
+    },
+    [router, currentLanguage]
+  );
+
+  useEffect(() => {
+    setIsServerSide(false);
+  }, []);
+
+  // this will suppress the useLayoutEffect warnings.
+  if (isServerSide) {
+    // You can show some kind of placeholder UI here
+    return null;
+  }
+
+  return (
+    <WetProvider language={currentLanguage} linkHandler={handleLink}>
+      <Component {...pageProps} />
+    </WetProvider>
+  );
+}
+
+export default appWithTranslation(WetForNextJsAppp);
+```
+
+4. Modify `pages/index.tsx` to match the following:
+
+```tsx
+import { SplashTemplate } from "@arcnovus/wet-boew-react";
+
+export default function Index() {
+  const labels = {
+    en: {
+      appName: "My NextJS app.",
+    },
+    fr: {
+      appName: "Mon application NextJS.",
+    },
+  };
+
+  return (
+    <SplashTemplate
+      nameEng={labels.en.appName}
+      nameFra={labels.fr.appName}
+      indexEng="/en/home"
+      indexFra="/fr/home"
+    />
+  );
+}
+```
+
+5. Create a new file at `pages/home.tsx` with the following contents:
+
+```tsx
+import {
+  AppTemplate,
+  PageTitle,
+  useLngLinks,
+} from "@arcnovus/wet-boew-react";
+import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
+
+export default function Home() {
+  const router = useRouter();
+  const currentLanguage = router.locale?.split("-")[0] ?? "en";
+  const { lngLinks } = useLngLinks({
+    currentLanguage,
+    translatedPage: `/${currentLanguage == "en" ? "fr" : "en"}/home/`,
+  });
+
+  const labels = {
+    en: {
+      title: "My NextJS app",
+      intro: "Welcome",
+    },
+    fr: {
+      title: "Mon application NextJS.",
+      intro: "Bienvenue",
+    },
+  };
+
+  return (
+  <AppTemplate appName={[{ text: labels[currentLanguage].title, href: "/home" }]} lngLinks={lngLinks}>
+      <PageTitle text={labels[currentLanguage].title}> />
+      <p>{labels[currentLanguage].intro}</p>
+    </AppTemplate>
+  );
+}
+```
+
+### Next Steps
+
+Consider integrating [next-18next](https://www.npmjs.com/package/next-i18next) for better bilingual support.
 
 ## Changing the layout of your app.
 
@@ -111,7 +242,7 @@ import {
   useLanguage,
 } from "@arcnovus/wet-boew-react";
 
-export default function App() {
+export default function Index() {
   const { currentLanguage } = useLanguage();
   const labels = {
     en: {

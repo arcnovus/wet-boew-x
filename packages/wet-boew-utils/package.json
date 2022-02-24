@@ -1,6 +1,6 @@
 {
   "name": "@arcnovus/wet-boew-utils",
-  "version": "1.0.15-alpha.0",
+  "version": "1.0.15-alpha.2",
   "description": "Utils for adding CDTS to Modern JS Frameworks like React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

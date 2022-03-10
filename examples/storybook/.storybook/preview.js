@@ -21,7 +21,7 @@ export const parameters = {
         "Templates",
         ["Bilingual", "Canada.ca theme", "Application Templates"],
         "Components",
-        ["PageTitle", "Headings", "Alerts", "Tables", "DataTables"],
+        ["PageTitle", "Headings", "Alerts", "Buttons", "Tables", "DataTables"],
       ],
     },
   },

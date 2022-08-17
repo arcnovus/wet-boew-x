@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@arcnovus/wet-boew-react@^1.0.15-alpha.0":
-  version "1.0.15-alpha.4"
-  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-react/-/wet-boew-react-1.0.15-alpha.4.tgz#5c4a83d869de4b298b33a192b92beaf66ab9d4da"
-  integrity sha512-F0d7d+GyCY16k+5ZULMAhaAzf6RaSLyUf1TKMajKjhmPJ8UqIBqYHnJOvUArRkGGJ3A2HH/mgjeWTczFhuUxKw==
+"@arcnovus/wet-boew-react@^1.0.15-alpha.5":
+  version "1.0.15-alpha.5"
+  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-react/-/wet-boew-react-1.0.15-alpha.5.tgz#bddf73107b7502099763bb6aeae818449478c0f1"
+  integrity sha512-5zsGJ3GenMcpJU6B3yynDYSPrTs9s17n5NvpbZm7VGclLk7RXtcOpPTdjE8/224af0uLK1iRw9cpx1F/+cdpkg==
   dependencies:
     "@arcnovus/wet-boew-utils" "^1.0.15-aplha.4"
     "@types/datatables.net" "^1.10.20"
@@ -5544,9 +5544,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001181, caniuse-lite@^1.0.30001251:
-  version "1.0.30001312"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001312.tgz"
-  integrity sha512-Wiz1Psk2MEK0pX3rUzWaunLTZzqS2JYZFzNKqAiJGiuxIjRPLgV6+VDPOg6lQOUxmDwhTlh198JsTTi8Hzw6aQ==
+  version "1.0.30001378"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001378.tgz"
+  integrity sha512-JVQnfoO7FK7WvU4ZkBRbPjaot4+YqxogSDosHv0Hv5mWpUESmN+UubMU6L/hGz8QlQ2aY5U0vR6MOs6j/CXpNA==
 
 capture-exit@^2.0.0:
   version "2.0.0"

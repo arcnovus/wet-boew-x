@@ -6,4 +6,6 @@ export { WarningButton } from "./WarningButton";
 export { DangerButton } from "./DangerButton";
 export { InfoButton } from "./InfoButton";
 export { LinkButton } from "./LinkButton";
-export type { ButtonProps, ButtonVariant, HtmlButtonProps } from "./Button";
+export { useButtonVariant } from "./useButtonVariant";
+export type { ButtonProps, HtmlButtonProps } from "./Button";
+export type { ButtonVariant } from "./useButtonVariant";

@@ -21,7 +21,15 @@ export const parameters = {
         "Templates",
         ["Bilingual", "Canada.ca theme", "Application Templates"],
         "Components",
-        ["PageTitle", "Headings", "Alerts", "Buttons", "Tables", "DataTables"],
+        [
+          "PageTitle",
+          "Headings",
+          "Alerts",
+          "Forms",
+          "Buttons",
+          "Tables",
+          "DataTables",
+        ],
       ],
     },
   },
@@ -31,7 +39,7 @@ export const decorators = [
   (Story) => {
     return (
       <WetProvider
-        version="run" // currently supported: "run", 4.0.39, 4.0.32
+        version="rn" // currently supported: "run", 4.0.39, 4.0.32
         linkHandler={storybookLinkHanlder}
       >
         <Story />

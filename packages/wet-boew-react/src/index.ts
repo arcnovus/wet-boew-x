@@ -36,6 +36,18 @@ export {
   InfoButton,
   LinkButton,
 } from "./buttons";
+export {
+  Form,
+  FormGroup,
+  InputLabel,
+  FormControl,
+  NumberInput,
+  TextInput,
+  TelInput,
+  EmailInput,
+  PasswordInput,
+  UrlInput,
+} from "./forms";
 
 export type { AlertVariant } from "./alerts";
 export type { TableProps } from "./tables";

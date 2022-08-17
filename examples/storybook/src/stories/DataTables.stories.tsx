@@ -5,6 +5,13 @@ export default {
   component: DataTable,
 } as Meta;
 
+const cars = [
+  { make: "Mercedes", model: "CLS", year: "2019" },
+  { make: "BMW", model: "X6", year: "2020" },
+  { make: "Ferrari", model: "308", year: "1985" },
+  { make: "Porsche", model: "911", year: "2018" },
+];
+
 export const Default = () => (
   <DataTable id="normaldt" caption="default">
     <thead>

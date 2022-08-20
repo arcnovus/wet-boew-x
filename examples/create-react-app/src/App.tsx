@@ -30,7 +30,10 @@ export default function App() {
     [history]
   );
   return (
-    <WetProvider linkHandler={handleClick}>
+    <WetProvider
+      linkHandler={handleClick}
+      appTitle={labels[currentLanguage ?? "en"].appName}
+    >
       {currentLanguage == null ? (
         <SplashTemplate
           nameEng={labels.en.appName}
@@ -47,9 +50,6 @@ export default function App() {
         >
           <PageTitle text={labels[currentLanguage].title} />
           <p>{labels[currentLanguage].contents}</p>
-          <a href="/robots.txt" download="robots.txt" target="_blank">
-            Download
-          </a>
         </AppTemplate>
       )}
     </WetProvider>

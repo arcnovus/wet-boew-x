@@ -1,7 +1,6 @@
 import { useLayoutEffect } from "react";
-import { registerWetComponent, useWetComponent } from "../wet";
+import { registerWetComponent } from "../wet";
 import { TableProps, Table } from "./Table";
-import { renderToStaticMarkup } from "react-dom/server";
 
 export function DataTable({
   className,

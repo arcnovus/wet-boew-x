@@ -21,23 +21,17 @@ export function Form({
     registerWetComponent(`#${validationWrapperId}`);
   }, [validationWrapperId]);
   return (
-    // WARNING: Do not remove the outer `<div>` below!
-    // WET injects DOM nodes outside the `<div id={validationWrapperId}>` which React will error on
-    // if they are not inside a parent node of this component.
-    // Wrapping our validation div in another `<div>` fixes this.
-    <div>
-      <div
-        id={validationWrapperId}
-        className="wb-frmvld"
-        style={{ marginTop: "100px" }}
-      >
-        <form role="form" {...props} id={id}>
-          <fieldset>
-            <legend>{legend}</legend>
-            {children}
-          </fieldset>
-        </form>
-      </div>
+    <div
+      id={validationWrapperId}
+      className="wb-frmvld"
+      style={{ marginTop: "100px" }}
+    >
+      <form role="form" {...props} id={id}>
+        <fieldset>
+          <legend>{legend}</legend>
+          {children}
+        </fieldset>
+      </form>
     </div>
   );
 }

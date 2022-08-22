@@ -23,7 +23,7 @@ export default function App() {
       appName: "Une application merveilleuse.",
     },
   };
-  const handleClick = useCallback(
+  const handleLink = useCallback(
     (a) => {
       history.push(a.href.replace(window.location.origin, ""));
     },
@@ -31,7 +31,7 @@ export default function App() {
   );
   return (
     <WetProvider
-      linkHandler={handleClick}
+      linkHandler={handleLink}
       appTitle={labels[currentLanguage ?? "en"].appName}
     >
       {currentLanguage == null ? (

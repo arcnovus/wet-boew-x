@@ -6,6 +6,7 @@ import {
   Form,
   FormGroup,
   PasswordInput,
+  PrimaryButton,
   useLanguage,
 } from "@arcnovus/wet-boew-react";
 
@@ -39,7 +40,7 @@ export const BasicUse = () => {
             language={currentLanguage ?? "en"}
           />
         </FormGroup>
-        <input type="submit" value="Submit" className="btn btn-primary" />
+        <PrimaryButton type="submit">Submit</PrimaryButton>
         {/* <DefaultButton type="submit">Submit</DefaultButton> */}
       </Form>
     </Container>

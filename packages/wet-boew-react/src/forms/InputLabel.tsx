@@ -19,12 +19,24 @@ const labels = {
   },
 };
 
-export function InputLabel({ id, label, language, ...props }: InputLabelProps) {
+export function InputLabel({
+  id,
+  label,
+  language,
+  htmlFor,
+  ...props
+}: InputLabelProps) {
   return (
-    <label htmlFor={id} className={props.required ? "required" : ""}>
+    <label
+      id={id}
+      htmlFor={htmlFor}
+      className={props.required ? "required" : ""}
+    >
       <span className="field-name">{label}</span>{" "}
       {props.required && (
-        <strong className="required">({labels[language].required})</strong>
+        <strong className="required" aria-hidden={true}>
+          ({labels[language].required})
+        </strong>
       )}
     </label>
   );

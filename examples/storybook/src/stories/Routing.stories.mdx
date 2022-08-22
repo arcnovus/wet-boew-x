@@ -27,7 +27,7 @@ import { useLanguage } from "@arcnovus/wet-boew-react";
 
 const { currentLanguage } = useLanguage(useLocation());
 const history = useHistory();
-const handleClick = useCallback(
+const handleLink = useCallback(
   (a) => {
     history.push(a.href.replace(window.location.origin, ""));
   },

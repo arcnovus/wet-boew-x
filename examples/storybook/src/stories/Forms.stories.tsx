@@ -1,7 +1,6 @@
 import { Meta } from "@storybook/react";
 import {
   Container,
-  DefaultButton,
   EmailInput,
   Form,
   FormGroup,

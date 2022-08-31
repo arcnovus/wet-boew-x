@@ -1,16 +1,16 @@
 import { Meta } from "@storybook/react";
-import { DataTable, Table } from "@arcnovus/wet-boew-react";
+import { DataTable } from "@arcnovus/wet-boew-react";
 export default {
   title: "Components/DataTables",
   component: DataTable,
 } as Meta;
 
-const cars = [
-  { make: "Mercedes", model: "CLS", year: "2019" },
-  { make: "BMW", model: "X6", year: "2020" },
-  { make: "Ferrari", model: "308", year: "1985" },
-  { make: "Porsche", model: "911", year: "2018" },
-];
+// const cars = [
+//   { make: "Mercedes", model: "CLS", year: "2019" },
+//   { make: "BMW", model: "X6", year: "2020" },
+//   { make: "Ferrari", model: "308", year: "1985" },
+//   { make: "Porsche", model: "911", year: "2018" },
+// ];
 
 export const Default = () => (
   <DataTable id="normaldt" caption="default">

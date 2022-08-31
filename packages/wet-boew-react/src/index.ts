@@ -38,6 +38,7 @@ export {
   InfoButton,
   LinkButton,
 } from "./buttons";
+
 export {
   Form,
   FormGroup,
@@ -50,6 +51,18 @@ export {
   PasswordInput,
   UrlInput,
 } from "./forms";
+
+export {
+  Panel,
+  DefaultPanel,
+  PanelPaddedContent,
+  DangerPanel,
+  InfoPanel,
+  PrimaryPanel,
+  SuccessPanel,
+  WarningPanel,
+} from "./panels";
+export type { PanelProps } from "./panels";
 
 export type { AlertVariant } from "./alerts";
 export type { TableProps } from "./tables";

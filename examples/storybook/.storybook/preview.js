@@ -29,6 +29,7 @@ export const parameters = {
           "Forms",
           "Headings",
           "PageTitle",
+          "Panels",
           "Tables",
         ],
       ],

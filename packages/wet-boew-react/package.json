@@ -4,6 +4,9 @@
   "description": "Wet components for ReactJS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
   "repository": "https://github.com/arcnovus/wet-booew-x/tree/main/packages/wet-boew-react",
   "author": "Bill Sourour (bill.sourour@arcnovus.com)",
   "license": "MIT",

@@ -20,12 +20,22 @@ function Panel({
   let variantCssClass = usePanelVariant(variant);
   let customCssClass = className ?? "";
   let cssClass = `${customCssClass} ${variantCssClass}`.trim();
+  let hasTitle = title != null;
+  let hasFooter = footer != null;
+
+  if (typeof title === "string" && title.trim().length === 0) {
+    hasTitle = false;
+  }
+
+  if (typeof footer === "string" && footer.trim().length === 0) {
+    hasFooter = false;
+  }
 
   return (
     <div className={cssClass}>
-      {title && <PanelTitle>{title}</PanelTitle>}
+      {hasTitle && <PanelTitle>{title}</PanelTitle>}
       {fullWidth ? <>{children}</> : <PanelBody>{children}</PanelBody>}
-      {footer && <PanelFooter>{footer}</PanelFooter>}
+      {hasFooter && <PanelFooter>{footer}</PanelFooter>}
     </div>
   );
 }
@@ -46,6 +56,5 @@ function PanelFooter({ children }: PropsWithChildren<{}>) {
   return <footer className="panel-footer">{children}</footer>;
 }
 
-Panel.PaddedContent = PanelBody;
 export { Panel };
 export { PanelBody as PanelPaddedContent };

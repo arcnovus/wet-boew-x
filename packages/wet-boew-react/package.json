@@ -26,16 +26,32 @@
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.13",
     "@rollup/plugin-commonjs": "^19.0.1",
     "@rollup/plugin-node-resolve": "^13.0.2",
     "@rollup/plugin-typescript": "^8.2.3",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack4": "^6.5.10",
+    "@storybook/manager-webpack4": "^6.5.10",
+    "@storybook/node-logger": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@types/jest": "^26.0.24",
     "@types/react": "^17.0.14",
+    "babel-loader": "^8.2.5",
     "jest": "^27.0.6",
     "jest-cli": "^27.0.6",
+    "react": "^17.0.2",
+    "react-docgen-typescript": "^2.2.2",
+    "react-dom": "^17.0.2",
     "rollup": "^2.53.2",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-visualizer": "^5.5.2",
@@ -48,6 +64,7 @@
   },
   "dependencies": {
     "@arcnovus/wet-boew-utils": "^1.0.15-aplha.4",
+    "@babel/preset-react": "^7.18.6",
     "@types/datatables.net": "^1.10.20",
     "deepmerge": "^4.2.2",
     "tslib": "^2.3.0"

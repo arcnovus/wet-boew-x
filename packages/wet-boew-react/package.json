@@ -1,6 +1,6 @@
 {
   "name": "@arcnovus/wet-boew-react",
-  "version": "1.0.16-alpha.1",
+  "version": "1.0.16-alpha.2",
   "description": "Wet components for ReactJS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
+    "@babel/preset-react": "^7.18.6",
     "@rollup/plugin-commonjs": "^19.0.1",
     "@rollup/plugin-node-resolve": "^13.0.2",
     "@rollup/plugin-typescript": "^8.2.3",
@@ -56,8 +57,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-visualizer": "^5.5.2",
     "ts-jest": "^27.0.3",
-    "typescript": "^4.3.5",
-    "@babel/preset-react": "^7.18.6"
+    "typescript": "^4.3.5"
   },
   "peerDependencies": {
     "react": "^17.0.2",

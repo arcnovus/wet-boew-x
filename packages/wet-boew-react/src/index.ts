@@ -63,7 +63,8 @@ export {
   WarningPanel,
 } from "./panels";
 export type { PanelProps } from "./panels";
-
+export { Archived } from "./archived";
+export type { ArchivedProps } from "./archived";
 export type { AlertVariant } from "./alerts";
 export type { TableProps } from "./tables";
 export type {

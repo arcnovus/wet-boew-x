@@ -34,8 +34,8 @@ function ArchivedEnglish({ replacedBy }: Omit<ArchivedProps, "language">) {
         <h2>This page has been archived on the Web</h2>
         {replacedBy && (
           <p>
-            <a href={replacedBy.href}>{replacedBy.title}</a>
-            replaces this content.
+            <a href={replacedBy.href}>{replacedBy.title}</a> replaces this
+            content.
           </p>
         )}
         <p>
@@ -73,8 +73,8 @@ function ArchivedFrench({ replacedBy }: Omit<ArchivedProps, "language">) {
         <h2>Cette page Web a été archivée dans le Web</h2>
         {replacedBy && (
           <p>
-            <a href={replacedBy.href}>{replacedBy.title}</a>
-            remplace ce contenu.
+            <a href={replacedBy.href}>{replacedBy.title}</a> remplace ce
+            contenu.
           </p>
         )}
         <p>

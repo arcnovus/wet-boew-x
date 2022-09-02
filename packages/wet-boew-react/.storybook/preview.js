@@ -23,6 +23,7 @@ export const parameters = {
         "Components",
         [
           "Alerts",
+          "Archived",
           "Badges",
           "Buttons",
           "DataTables",

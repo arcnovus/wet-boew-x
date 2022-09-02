@@ -24,3 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 
 bundle-analysis.html
+
+#storybook
+/storybook-static

@@ -1,8 +1,9 @@
 export { Panel, PanelPaddedContent } from "./Panel";
 export type { PanelProps } from "./Panel";
-export { DangerPanel } from "./DangerPanel";
-export { DefaultPanel } from "./DefaultPanel";
-export { InfoPanel } from "./InfoPanel";
-export { PrimaryPanel } from "./PrimaryPanel";
-export { SuccessPanel } from "./SuccessPanel";
-export { WarningPanel } from "./WarningPanel";
+// PanelDanger is deprecated
+export { PanelDanger } from "./PanelDanger";
+export { PanelDefault } from "./PanelDefault";
+export { PanelInfo } from "./PanelInfo";
+export { PanelPrimary } from "./PanelPrimary";
+export { PanelSuccess } from "./PanelSuccess";
+export { PanelWarning } from "./PanelWarning";

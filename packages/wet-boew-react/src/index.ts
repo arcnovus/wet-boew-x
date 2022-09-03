@@ -54,13 +54,13 @@ export {
 
 export {
   Panel,
-  DefaultPanel,
+  PanelDefault,
   PanelPaddedContent,
-  DangerPanel,
-  InfoPanel,
-  PrimaryPanel,
-  SuccessPanel,
-  WarningPanel,
+  PanelDanger,
+  PanelInfo,
+  PanelPrimary,
+  PanelSuccess,
+  PanelWarning,
 } from "./panels";
 export type { PanelProps } from "./panels";
 

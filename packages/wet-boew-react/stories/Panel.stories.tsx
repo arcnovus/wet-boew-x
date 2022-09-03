@@ -3,17 +3,17 @@ import { Story, Meta } from "@storybook/react";
 import {
   Column,
   Container,
-  DangerPanel,
-  DefaultPanel,
-  InfoPanel,
+  PanelDanger,
+  PanelDefault,
+  PanelInfo,
   Main,
   Panel,
   PanelPaddedContent,
-  PrimaryPanel,
+  PanelPrimary,
   Row,
-  SuccessPanel,
+  PanelSuccess,
   Table,
-  WarningPanel,
+  PanelWarning,
 } from "../src";
 import type { PanelProps } from "../src";
 
@@ -108,7 +108,7 @@ const DefaultTemplate = (args: StyledPanelProps) => (
     <Container>
       <Row>
         <Column md={4}>
-          <DefaultPanel {...args}>{args.children}</DefaultPanel>
+          <PanelDefault {...args}>{args.children}</PanelDefault>
         </Column>
       </Row>
     </Container>
@@ -128,7 +128,7 @@ const PrimaryTemplate = (args: StyledPanelProps) => (
     <Container>
       <Row>
         <Column md={4}></Column>
-        <PrimaryPanel {...args}>{args.children}</PrimaryPanel>
+        <PanelPrimary {...args}>{args.children}</PanelPrimary>
       </Row>
     </Container>
   </Main>
@@ -147,7 +147,7 @@ const SuccessTemplate = (args: StyledPanelProps) => (
     <Container>
       <Row>
         <Column md={4}>
-          <SuccessPanel {...args}>{args.children}</SuccessPanel>
+          <PanelSuccess {...args}>{args.children}</PanelSuccess>
         </Column>
       </Row>
     </Container>
@@ -167,7 +167,7 @@ const InfoTemplate = (args: StyledPanelProps) => (
     <Container>
       <Row>
         <Column md={4}>
-          <InfoPanel {...args}>{args.children}</InfoPanel>
+          <PanelInfo {...args}>{args.children}</PanelInfo>
         </Column>
       </Row>
     </Container>
@@ -187,7 +187,7 @@ const WarningTemplate = (args: StyledPanelProps) => (
     <Container>
       <Row>
         <Column md={4}>
-          <WarningPanel {...args}>{args.children}</WarningPanel>
+          <PanelWarning {...args}>{args.children}</PanelWarning>
         </Column>
       </Row>
     </Container>
@@ -204,7 +204,7 @@ Warning.args = {
 
 const DangerTemplate = (args: StyledPanelProps) => (
   <Main>
-    <DangerPanel {...args}>{args.children}</DangerPanel>
+    <PanelDanger {...args}>{args.children}</PanelDanger>
   </Main>
 );
 export const Danger: Story<StyledPanelProps> = DangerTemplate.bind({});

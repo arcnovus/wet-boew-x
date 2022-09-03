@@ -1,8 +1,8 @@
 import { PropsWithChildren } from "react";
 import { Panel, PanelProps } from "./Panel";
 
-export function DangerPanel(
+export function PanelWarning(
   props: PropsWithChildren<Omit<PanelProps, "variant">>
 ) {
-  return <Panel variant="danger" {...props} />;
+  return <Panel variant="warning" {...props} />;
 }

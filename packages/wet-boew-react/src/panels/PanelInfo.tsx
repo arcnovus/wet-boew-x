@@ -1,8 +1,8 @@
 import { PropsWithChildren } from "react";
 import { Panel, PanelProps } from "./Panel";
 
-export function PrimaryPanel(
+export function PanelInfo(
   props: PropsWithChildren<Omit<PanelProps, "variant">>
 ) {
-  return <Panel variant="primary" {...props} />;
+  return <Panel variant="info" {...props} />;
 }

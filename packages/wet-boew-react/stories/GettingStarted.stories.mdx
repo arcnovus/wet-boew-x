@@ -41,7 +41,7 @@ import {
   SplashTemplate,
   WetProvider,
   useLanguage,
-} from "../src";
+} from "@arcnovus/wet-boew-react";
 
 export default function App() {
   const { currentLanguage } = useLanguage();
@@ -85,7 +85,8 @@ npm run start
 ```bash
 npx create-next-app my-app --typescript
 cd my-app
-npm i @arcnovus/wet-boew-react next-transpile-modules
+npm i @arcnovus/wet-boew-react next-transpile-modules react@17.0.2 react-dom@17.0.2
+npm i @types/node -D
 ```
 
 2. Open `next.config.js` with your favorite code editor and replace the contents with:
@@ -108,13 +109,14 @@ module.exports = withTM(nextConfig);
 ```tsx
 import type { AppProps } from "next/app";
 import { useCallback, useEffect, useState } from "react";
-import { WetProvider } from "../src";
+import { WetProvider, Language } from "@arcnovus/wet-boew-react";
 import { useRouter } from "next/router";
 
-function WetForNextJsAppp({ Component, pageProps }: AppProps) {
+export default function WetForNextJsAppp({ Component, pageProps }: AppProps) {
   const [isServerSide, setIsServerSide] = useState(true);
   const router = useRouter();
-  const currentLanguage = router.locale?.split("-")[0] ?? "en";
+  const currentLanguage =
+    (router.locale?.split("-")[0] as Language) ?? Language.EN;
   const handleLink = useCallback(
     (a: HTMLAnchorElement) => {
       const relativeUrl = a.href.replace(window.location.origin, "");
@@ -143,14 +145,12 @@ function WetForNextJsAppp({ Component, pageProps }: AppProps) {
     </WetProvider>
   );
 }
-
-export default appWithTranslation(WetForNextJsAppp);
 ```
 
 4. Modify `pages/index.tsx` to match the following:
 
 ```tsx
-import { SplashTemplate } from "../src";
+import { SplashTemplate } from "@arcnovus/wet-boew-react";
 
 export default function Index() {
   const labels = {
@@ -180,16 +180,20 @@ import {
   AppTemplate,
   PageTitle,
   useLngLinks,
-} from "../src";
+  Language,
+} from "@arcnovus/wet-boew-react";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 
 export default function Home() {
   const router = useRouter();
-  const currentLanguage = router.locale?.split("-")[0] ?? "en";
+  const currentLanguage =
+    (router.locale?.split("-")[0] as Language) ?? Language.EN;
   const { lngLinks } = useLngLinks({
     currentLanguage,
-    translatedPage: `/${currentLanguage == "en" ? "fr" : "en"}/home/`,
+    translatedPage: `/${
+      currentLanguage == Language.EN ? Language.FR : Language.EN
+    }/home/`,
   });
 
   const labels = {
@@ -204,12 +208,21 @@ export default function Home() {
   };
 
   return (
-  <AppTemplate appName={[{ text: labels[currentLanguage].title, href: "/home" }]} lngLinks={lngLinks}>
-      <PageTitle text={labels[currentLanguage].title}> />
+    <AppTemplate
+      appName={[{ text: labels[currentLanguage].title, href: "/home" }]}
+      lngLinks={lngLinks}
+    >
+      <PageTitle text={labels[currentLanguage].title} />
       <p>{labels[currentLanguage].intro}</p>
     </AppTemplate>
   );
 }
+```
+
+Go back to your terminal window and preview your app with the following command.
+
+```bash
+npm run dev
 ```
 
 ### Next Steps

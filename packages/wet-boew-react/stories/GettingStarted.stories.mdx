@@ -20,6 +20,28 @@ Current example projects include:
 - [create-react-app example](https://github.com/arcnovus/wet-booew-x/tree/main/examples/create-react-app) – Create React App with react-router-dom and react-i18next.
 - [nextjs example](https://github.com/arcnovus/wet-booew-x/tree/main/examples/nextjs) – NextJS App with next-i18next and TypeScript.
 
+So, for Create React App, you would do something like this:
+
+```bash
+mkdir my-app
+cd my-app
+git clone https://github.com/arcnovus/wet-boew-x.git temp
+cp -r temp/examples/create-react-app/* .
+rm -rf temp
+```
+
+Similarly for NextJS, it's:
+
+```bash
+mkdir my-app
+cd my-app
+git clone https://github.com/arcnovus/wet-boew-x.git temp
+cp -r temp/examples/nextjs/* .
+rm -rf temp
+```
+
+Then, you can start editing the files in the `src` folder.
+
 ## Create React App from scratch
 
 Open a terminal and use [Create React App (CRA)](https://create-react-app.dev/) to bootstrap a new React

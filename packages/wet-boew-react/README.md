@@ -18,8 +18,8 @@ and [NextJS](https://nextjs.org).
 ## Contents
 
 - [Quickstart](#quickstart)
-  - [CRA] (#using-the-create-react-app-example-as-a-starting-point)
-  - [NextJS] (#using-the-nextjs-example-as-a-starting-point)
+  - [CRA](#using-the-create-react-app-example-as-a-starting-point)
+  - [NextJS](#using-the-nextjs-example-as-a-starting-point)
 - [Create React App from scratch](#create-react-app-from-scratch)
 - [NextJS from Scratch](#nextjs-from-scratch-typescript)
 - [Architecture](#architecture)

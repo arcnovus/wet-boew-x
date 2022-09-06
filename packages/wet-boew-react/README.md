@@ -1,5 +1,12 @@
 # WET-BOEW-REACT
 
+## 🚨🚨 DISCLAIMER 🚨🚨
+
+**This library is in use at several Government of Canada departments; however,
+it remains an independent, experimental, open source project that is not
+officially supported or endorsed by the Government of Canada at this time.
+Use at your own risk.**
+
 ## [**📔 Click here for full documentation**](https://wbr-docs.vercel.app/)
 
 WET-BOEW-REACT (WBR) is a component library that enables web developers to use the Government
@@ -7,12 +14,6 @@ of Canada's [Web Experience Toolkit (WET)](https://wet-boew.github.io/wet-boew/)
 and [Centrally Deployed Template System (CDTS)](https://cenw-wscoe.github.io/sgdc-cdts/)
 with [React JS](https://reactjs.org), including [Create React App](https://create-react-app.dev/)
 and [NextJS](https://nextjs.org).
-
-## 🚨🚨 DISCLAIMER 🚨🚨
-
-**This is an independent, experimental, open source project that is not
-officially supported or endorsed by the Government of Canada at this time.
-Use at your own risk.**
 
 ## Contents
 

@@ -8,5 +8,7 @@ Currently used by WET-BOEW-REACT.
 
 ## 🚨🚨 DISCLAIMER 🚨🚨
 
-**This is an independent, experimental, open source project that is not
-officially supported or endorsed by the Government of Canada at this time.**
+**This library is in use at several Government of Canada departments; however,
+it remains an independent, experimental, open source project that is not
+officially supported or endorsed by the Government of Canada at this time.
+Use at your own risk.**

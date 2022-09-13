@@ -40,16 +40,31 @@ export {
 } from "./buttons";
 
 export {
+  DateInput,
+  // match the style guide naming "DatePicker":
+  // https://wet-boew.github.io/v4.0-ci/docs/ref/datepicker/datepicker-en.html
+  DateInput as DatePicker,
+  EmailInput,
   Form,
+  FormControl,
   FormGroup,
   InputLabel,
-  FormControl,
   NumberInput,
-  TextInput,
-  TelInput,
-  EmailInput,
   PasswordInput,
+  TelInput,
+  TextInput,
   UrlInput,
+} from "./forms";
+export type {
+  DateInputProps as DatePickerProps,
+  DateInputProps,
+  EmailInputProps,
+  FormControlProps,
+  NumberInputProps,
+  PasswordInputProps,
+  TelInputProps,
+  TextInputProps,
+  UrlInputProps,
 } from "./forms";
 
 export {

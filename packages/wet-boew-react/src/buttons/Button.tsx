@@ -1,10 +1,12 @@
 import { PropsWithChildren } from "react";
-import { useButtonVariant, ButtonVariant } from "./useButtonVariant";
+import { Variant } from "../Variant";
 
 export type HtmlButtonProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 >;
+
+export type ButtonVariant = Variant | "link";
 
 export interface ButtonProps extends HtmlButtonProps {
   variant?: ButtonVariant;
@@ -14,5 +16,5 @@ export const Button = ({
   variant,
   ...props
 }: PropsWithChildren<ButtonProps>) => (
-  <button className={useButtonVariant(variant ?? "default")} {...props} />
+  <button className={`btn btn-${variant ?? "default"}`} {...props} />
 );

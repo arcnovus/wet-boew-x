@@ -1,8 +1,8 @@
 import { PropsWithChildren, ReactNode } from "react";
-import { usePanelVariant, PanelVariant } from "./usePanelVariant";
+import type { Variant } from "../Variant";
 
 export type PanelProps = PropsWithChildren<{
-  variant?: PanelVariant;
+  variant?: Variant;
   className?: string;
   title?: ReactNode;
   footer?: ReactNode;
@@ -17,7 +17,7 @@ function Panel({
   className,
   fullWidth,
 }: PanelProps) {
-  let variantCssClass = usePanelVariant(variant);
+  let variantCssClass = `panel panel-${variant ?? "default"}`;
   let customCssClass = className ?? "";
   let cssClass = `${customCssClass} ${variantCssClass}`.trim();
   let hasTitle = title != null;

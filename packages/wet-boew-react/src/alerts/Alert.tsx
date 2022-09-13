@@ -1,6 +1,10 @@
 import React from "react";
+import { Variant } from "../Variant";
 
-export type AlertVariant = "info" | "success" | "warning" | "danger";
+export type AlertVariant = Pick<
+  Variant,
+  "info" & "success" & "warning" & "danger"
+>;
 
 export function Alert({
   children,

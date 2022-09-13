@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactNode } from "react";
-import type { Variant } from "../variants";
+import type { Variant } from "../Variant";
 
 export type PanelProps = PropsWithChildren<{
   variant?: Variant;

@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { Variant } from "../variants";
+import { Variant } from "../Variant";
 
 export type HtmlButtonProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,

@@ -1,5 +1,5 @@
 import React from "react";
-import { Variant } from "../variants";
+import { Variant } from "../Variant";
 
 export type AlertVariant = Pick<
   Variant,

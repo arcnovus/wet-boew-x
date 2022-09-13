@@ -1,10 +1,12 @@
+import { ReactNode } from "react";
+
 export type HtmlLabelProps = React.DetailedHTMLProps<
   React.LabelHTMLAttributes<HTMLLabelElement>,
   HTMLLabelElement
 >;
 
 export interface InputLabelProps extends HtmlLabelProps {
-  label: string;
+  label: string | ReactNode;
   id: string;
   required?: boolean;
   language: "en" | "fr";

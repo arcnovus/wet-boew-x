@@ -54,6 +54,7 @@ export {
   TelInput,
   TextInput,
   UrlInput,
+  SubmitButton,
 } from "./forms";
 export type {
   DateInputProps as DatePickerProps,

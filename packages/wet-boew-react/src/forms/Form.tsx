@@ -21,11 +21,7 @@ export function Form({
     registerWetComponent(`#${validationWrapperId}`);
   }, [validationWrapperId]);
   return (
-    <div
-      id={validationWrapperId}
-      className="wb-frmvld"
-      style={{ marginTop: "100px" }}
-    >
+    <div id={validationWrapperId} className="wb-frmvld">
       <form role="form" {...props} id={id}>
         <fieldset>
           <legend>{legend}</legend>

@@ -1,18 +1,14 @@
-import { ButtonVariant, useButtonVariant } from "../buttons";
+import { Button, ButtonProps, ButtonVariant } from "../buttons";
 
-interface SubmitButtonProps {
-  id: string;
-  value: string;
-  variant?: ButtonVariant;
-}
+export type SubmitButtonProps = ButtonProps & { variant?: ButtonVariant };
 
-export function SubmitButton({ id, value, ...props }: SubmitButtonProps) {
+export function SubmitButton({ id, value, variant, ...props }: ButtonProps) {
   return (
-    <input
+    <Button
       type="submit"
       id={id}
+      variant={variant ?? "primary"}
       value={value}
-      className={useButtonVariant(props.variant ?? "primary")}
       {...props}
     />
   );

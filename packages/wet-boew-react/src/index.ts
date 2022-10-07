@@ -53,6 +53,7 @@ export {
   PasswordInput,
   TelInput,
   TextInput,
+  TextArea,
   UrlInput,
   SubmitButton,
 } from "./forms";
@@ -65,6 +66,7 @@ export type {
   PasswordInputProps,
   TelInputProps,
   TextInputProps,
+  TextAreaProps,
   UrlInputProps,
 } from "./forms";
 

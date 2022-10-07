@@ -24,7 +24,7 @@ export function TextArea({ id, label, language, ...props }: TextAreaProps) {
           required={props.required}
         />
       )}
-      <textarea id={id} value="hhh" {...props} className="form-control" />
+      <textarea id={id} {...props} className="form-control" />
     </>
   );
 }

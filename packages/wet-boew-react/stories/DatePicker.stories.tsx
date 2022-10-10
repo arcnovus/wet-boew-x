@@ -1,9 +1,9 @@
 import { Story, Meta } from "@storybook/react";
-import { DatePicker } from "../src";
+import { DatePicker, Language } from "../src";
 import type { DatePickerProps } from "../src";
 import React from "react";
 export default {
-  title: "Components/Forms",
+  title: "Components/FormsOld",
   component: DatePicker,
   name: "FormControl",
   argTypes: {
@@ -30,7 +30,7 @@ export const datePicker: Story<DatePickerProps> = Template.bind({});
 datePicker.args = {
   label: "Label 1",
   id: "exampleInput1",
-  language: "en",
+  language: Language.EN,
   required: false,
 };
 
@@ -38,7 +38,7 @@ export const datePickerMinMax: Story<DatePickerProps> = Template.bind({});
 datePickerMinMax.args = {
   label: "Label 1",
   id: "exampleInput1",
-  language: "en",
+  language: Language.EN,
   required: false,
   min: new Date("2022-08-19"),
   max: new Date(),

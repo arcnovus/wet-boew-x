@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import {
   getCurrentLanguage,
   Language,
@@ -16,6 +15,9 @@ export function useLanguage({
   const language = getCurrentLanguage({ pathname, search });
   if (language) {
     setLanguage({ language });
+  }
+  if (language == null) {
+    console.warn("Unable to determine language from URL.");
   }
   return { currentLanguage: language };
 }

@@ -1,15 +1,20 @@
-import { Button, ButtonProps, ButtonVariant } from "../buttons";
+import { forwardRef } from "react";
+import { ButtonVariant } from "../buttons";
 
-export type SubmitButtonProps = ButtonProps & { variant?: ButtonVariant };
+export type SubmitButtonProps = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+> & { variant?: ButtonVariant };
 
-export function SubmitButton({ id, value, variant, ...props }: ButtonProps) {
-  return (
-    <Button
+export const SubmitButton = forwardRef<HTMLInputElement, SubmitButtonProps>(
+  ({ id, value, variant, ...props }, ref) => (
+    <input
       type="submit"
       id={id}
-      variant={variant ?? "primary"}
+      ref={ref}
+      className={`btn btn-${variant ?? "primary"}`}
       value={value}
       {...props}
     />
-  );
-}
+  )
+);

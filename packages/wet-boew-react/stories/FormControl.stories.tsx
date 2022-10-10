@@ -7,6 +7,11 @@ import {
   TelInput,
   NumberInput,
   UrlInput,
+  TextAreaProps,
+  TextArea,
+  FileInputProps,
+  FileInput,
+  Language,
 } from "../src";
 import type {
   FormControlProps,
@@ -17,17 +22,17 @@ import type {
   TelInputProps,
   UrlInputProps,
 } from "../src";
-
 import React from "react";
+
 export default {
-  title: "Components/Forms",
+  title: "Components/FormsOld",
   component: FormControl,
   name: "FormControl",
   argTypes: {
     language: {
       control: {
         type: "select",
-        options: ["en", "fr"],
+        options: [Language.EN, "fr"],
       },
     },
     type: {
@@ -48,7 +53,7 @@ export const formControl: Story<FormControlProps> = FormControlTemplate.bind(
 formControl.args = {
   label: "Label 1",
   id: "exampleInput1",
-  language: "en",
+  language: Language.EN,
   required: false,
 };
 
@@ -57,7 +62,7 @@ export const textInput: Story<TextInputProps> = TextInputTemplate.bind({});
 textInput.args = {
   label: "Text",
   id: "exampleInput2",
-  language: "en",
+  language: Language.EN,
   required: false,
 };
 
@@ -66,7 +71,7 @@ export const emailInput: Story<EmailInputProps> = EmailInputTemplate.bind({});
 emailInput.args = {
   label: "Email",
   id: "exampleInput3",
-  language: "en",
+  language: Language.EN,
   required: false,
 };
 
@@ -78,7 +83,7 @@ export const passwordInput: Story<PasswordInputProps> =
 passwordInput.args = {
   label: "Password",
   id: "exampleInput4",
-  language: "en",
+  language: Language.EN,
   required: false,
 };
 
@@ -91,7 +96,7 @@ export const numberInput: Story<NumberInputProps> = NumberInputTemplate.bind(
 numberInput.args = {
   label: "Number",
   id: "exampleInput5",
-  language: "en",
+  language: Language.EN,
   required: false,
 };
 
@@ -100,7 +105,7 @@ export const telInput: Story<TelInputProps> = TelInputTemplate.bind({});
 telInput.args = {
   label: "Tel",
   id: "exampleInput6",
-  language: "en",
+  language: Language.EN,
   required: false,
 };
 
@@ -109,6 +114,15 @@ export const urlInput: Story<UrlInputProps> = UrlInputTemplate.bind({});
 urlInput.args = {
   label: "URL",
   id: "exampleInput7",
-  language: "en",
+  language: Language.EN,
+  required: false,
+};
+
+const FileInputTemplate = (args: FileInputProps) => <FileInput {...args} />;
+export const fileInput: Story<FileInputProps> = FileInputTemplate.bind({});
+urlInput.args = {
+  label: "File input",
+  id: "exampleInput9",
+  language: Language.EN,
   required: false,
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef, Ref } from "react";
 import { Variant } from "../Variant";
 
 export type AlertVariant = Pick<
@@ -6,9 +6,13 @@ export type AlertVariant = Pick<
   "info" & "success" & "warning" & "danger"
 >;
 
-export function Alert({
-  children,
-  variant,
-}: React.PropsWithChildren<{ variant: AlertVariant }>): JSX.Element {
-  return <div className={`alert alert-${variant}`}>{children}</div>;
-}
+export const Alert = forwardRef(
+  (
+    { children, variant }: React.PropsWithChildren<{ variant: AlertVariant }>,
+    ref: Ref<HTMLDivElement>
+  ) => (
+    <div className={`alert alert-${variant}`} ref={ref}>
+      {children}
+    </div>
+  )
+);

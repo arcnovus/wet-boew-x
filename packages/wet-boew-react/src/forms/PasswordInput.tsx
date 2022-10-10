@@ -1,7 +1,8 @@
+import { forwardRef } from "react";
 import { FormControl, FormControlProps } from "./FormControl";
 
 export type PasswordInputProps = Omit<FormControlProps, "type">;
 
-export function PasswordInput(props: PasswordInputProps) {
-  return <FormControl type="password" {...props} />;
-}
+export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
+  (props, ref) => <FormControl ref={ref} type="password" {...props} />
+);

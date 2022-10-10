@@ -1,6 +1,6 @@
 {
   "name": "@arcnovus/wet-boew-react",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha",
   "description": "Wet components for ReactJS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

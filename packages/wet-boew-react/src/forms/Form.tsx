@@ -1,28 +1,38 @@
-import { PropsWithChildren, useLayoutEffect } from "react";
+import { forwardRef, PropsWithChildren, useLayoutEffect } from "react";
 import { registerWetComponent } from "../wet";
 
-export interface HtmlFormProps
-  extends React.DetailedHTMLProps<
-    React.FormHTMLAttributes<HTMLFormElement>,
-    HTMLFormElement
-  > {
-  id: string;
-  legend: string;
-}
+export type HtmlFormProps = Omit<
+  | React.DetailedHTMLProps<
+      React.FormHTMLAttributes<HTMLFormElement>,
+      HTMLFormElement
+    > & {
+      id: string;
+      legend: string;
+      layout?: "horizontal" | "vertical";
+    },
+  | "ref" // remove legacy ref type
+  | "className" // remove className type
+>;
 
-export function Form({
-  children,
-  id,
-  legend,
-  ...props
-}: PropsWithChildren<HtmlFormProps>) {
+export const Form = forwardRef<
+  HTMLFormElement,
+  PropsWithChildren<HtmlFormProps>
+>(({ children, id, legend, layout = "vertical", ...props }, ref) => {
   const validationWrapperId = `${id}-validation-wrapper`;
   useLayoutEffect(() => {
     registerWetComponent(`#${validationWrapperId}`);
   }, [validationWrapperId]);
+  let formCss = layout === "horizontal" ? "form-horizontal" : "";
   return (
     <div id={validationWrapperId} className="wb-frmvld">
-      <form role="form" {...props} id={id}>
+      <form
+        role="form"
+        {...props}
+        ref={ref}
+        id={id}
+        className={formCss}
+        noValidate={props.noValidate ?? true}
+      >
         <fieldset>
           <legend>{legend}</legend>
           {children}
@@ -30,4 +40,4 @@ export function Form({
       </form>
     </div>
   );
-}
+});

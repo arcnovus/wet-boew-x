@@ -1,0 +1,297 @@
+import { Canvas, Story, Meta } from "@storybook/addon-docs";
+import { PageTitle } from "../src";
+
+import {
+  Checkbox,
+  CheckboxGroup,
+  Container,
+  Datalist,
+  DangerButton,
+  DatePicker,
+  EmailInput,
+  FileInput,
+  Form,
+  FormControl,
+  FormGroup,
+  InlineCheckbox,
+  InlineRadio,
+  NumberInput,
+  PasswordInput,
+  Radio,
+  RadioGroup,
+  SearchInput,
+  Select,
+  SubmitButton,
+  TelInput,
+  TextInput,
+  UrlInput,
+} from "../src";
+
+<Meta title="Components/Forms" />
+
+# Building WET Compliant Forms
+
+As of v2, WBR supports the full set of
+[WET form controls](https://wet-boew.github.io/wet-boew-styleguide/design/forms-en.html#selects)
+and built-in validation.
+
+For validation, WBR supports [specialized validation](https://wet-boew.github.io/v4.0-ci/docs/ref/formvalid/formvalid-en.html)
+using the `data-rule-xxx` attributes however these attributes must always be
+lowercase. For example, `data-rule-postalCodeCA` must be changed to
+`data-rule-postalcodeca`.
+
+Use a `data-msg` attribute to override the default validation message.
+
+<Canvas>
+  <Story name="Complete form">
+    <Container>
+      <Form legend="Complete Form with Validation" action="#" noValidate>
+        <FormGroup>
+          <Select
+            id="select"
+            label="Title"
+            optionsLabel="Select a title"
+            required
+            options={[
+              { value: "mr", label: "Mr." },
+              { value: "mrs", label: "Mrs." },
+              { value: "ms", label: "Ms." },
+              { value: "miss", label: "Miss" },
+              { value: "dr", label: "Dr." },
+              { value: "prof", label: "Prof." },
+            ]}
+          />
+        </FormGroup>
+        <FormGroup>
+          <TextInput
+            id="fname"
+            name="fname"
+            label="First name"
+            autoComplete="given-name"
+            required
+            data-rule-minlength="2"
+          />
+        </FormGroup>
+        <FormGroup>
+          <TextInput
+            id="lname"
+            name="lname"
+            label="Last name (custom error message)"
+            autoComplete="family-name"
+            required
+            data-rule-minlength="2"
+            data-msg="CUSTOM!! - Please enter your last name"
+          />
+        </FormGroup>
+        <FormGroup>
+          <TelInput
+            id="telno"
+            name="telno"
+            label="Telephone number (including area code)"
+            required
+            data-rule-phoneus="true"
+          />
+        </FormGroup>
+        <FormGroup>
+          <TextInput
+            id="pcodeca1"
+            name="pcodeca1"
+            label="Postal code (Canada)"
+            required
+            data-rule-postalcodeca="true"
+            maxLength="7"
+          />
+        </FormGroup>
+        <FormGroup>
+          <EmailInput
+            id="email"
+            name="email"
+            label="Email address (yourname@domain.com)"
+          />
+        </FormGroup>
+        <FormGroup>
+          <UrlInput
+            id="url"
+            name="url"
+            label="Website URL (https://www.url.com)"
+          />
+        </FormGroup>
+        <FormGroup>
+          <FileInput id="file1" name="file1" required label="File" />
+        </FormGroup>
+        <FormGroup>
+          <DatePicker
+            id="date1"
+            name="date1"
+            label="Date of Birth"
+            data-rule-dateiso="true"
+            max={new Date()}
+            min={new Date("1900-01-01")}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Datalist
+            id="cities"
+            label="City of birth"
+            name="city"
+            required
+            options={[
+              { label: "Ottawa", value: "Ottawa" },
+              { label: "Toronto", value: "Toronto" },
+              { label: "Barrie", value: "Barrie" },
+              { label: "Calgary", value: "Calgary" },
+              { label: "Edmonton", value: "Edmonton" },
+              { label: "Vancouver", value: "Vancouver" },
+              { label: "Victoria", value: "Victoria" },
+              { label: "Winnipeg", value: "Winnipeg" },
+              { label: "Montreal", value: "Montreal" },
+              { label: "Quebec City", value: "Quebec City" },
+              { label: "Halifax", value: "Halifax" },
+              { label: "St. John's", value: "St. John's" },
+            ]}
+          />
+        </FormGroup>
+        <FormGroup>
+          <FormControl
+            id="time1"
+            name="time1"
+            label="Time (hh:mm)"
+            type="time"
+          />
+        </FormGroup>
+        <FormGroup>
+          <NumberInput
+            id="num1"
+            name="num1"
+            label="Number (between -1 and 1 by step 0.1)"
+            min={-1}
+            max={1}
+            step={0.1}
+          />
+        </FormGroup>
+        <FormGroup>
+          <TextInput
+            id="an1"
+            name="an1"
+            label="Alphanumeric (at least 4 characters)"
+            data-rule-alphanumeric="true"
+            data-rule-minlength="4"
+          />
+        </FormGroup>
+        <FormGroup>
+          <NumberInput
+            id="num2"
+            name="num2"
+            label="Numeric (digits only)"
+            data-rule-digits="true"
+          />
+        </FormGroup>
+        <FormGroup>
+          <TextInput
+            id="letters1"
+            name="letters1"
+            label="Letters only (maximum of 5 characters)"
+            size={5}
+            maxLength={5}
+            data-rule-lettersonly="true"
+          />
+        </FormGroup>
+        <FormGroup>
+          <CheckboxGroup id="pets" label="Favourite pets" required>
+            <Checkbox
+              name="animal"
+              id="animal1"
+              value="dog"
+              label="Dog"
+              required
+            />
+            <Checkbox name="animal" id="animal2" value="cat" label="Cat" />
+            <Checkbox name="animal" id="animal3" value="fish" label="Fish" />
+            <Checkbox name="animal" id="animal4" value="other" label="Other" />
+          </CheckboxGroup>
+        </FormGroup>
+        <FormGroup>
+          <CheckboxGroup
+            id="fruits"
+            label="Favourite fruits (horizontal)"
+            required
+          >
+            <InlineCheckbox
+              name="fruit"
+              id="fruit1"
+              value="fruit1"
+              label="Apple"
+              required
+            />
+            <InlineCheckbox
+              name="fruit"
+              id="fruit2"
+              value="fruit2"
+              label="Banana"
+            />
+            <InlineCheckbox
+              name="fruit"
+              id="fruit3"
+              value="fruit3"
+              label="Orange"
+            />
+            <InlineCheckbox
+              name="fruit"
+              id="fruit4"
+              value="fruit4"
+              label="Other"
+            />
+          </CheckboxGroup>
+        </FormGroup>
+        <FormGroup>
+          <RadioGroup id="citizenship" label="Citizenship status" required>
+            <Radio
+              name="status"
+              id="status1"
+              value="1"
+              label="Canadian citizen"
+              required
+            />
+            <Radio
+              name="status"
+              id="status2"
+              value="2"
+              label="Permanent resident"
+            />
+            <Radio name="status" id="status3" value="3" label="Work permit" />
+            <Radio name="status" id="status4" value="4" label="Other" />
+          </RadioGroup>
+        </FormGroup>
+        <FormGroup>
+          <RadioGroup
+            id="citizenship"
+            label="Citizenship status (horizontal)"
+            required
+          >
+            <InlineRadio
+              name="cit"
+              id="cit1"
+              value="1"
+              label="Canadian citizen"
+              required
+            />
+            <InlineRadio
+              name="cit"
+              id="cit2"
+              value="2"
+              label="Permanent resident"
+            />
+            <InlineRadio name="cit" id="cit3" value="3" label="Work permit" />
+            <InlineRadio name="cit" id="cit4" value="4" label="Other" />
+          </RadioGroup>
+        </FormGroup>
+        <SubmitButton value="Submit" />
+        <input
+          type="reset"
+          value="Reset page to defaults"
+          className="btn btn-link btn-sm show p-0 mrgn-tp-md"
+        ></input>
+      </Form>
+    </Container>
+  </Story>
+</Canvas>

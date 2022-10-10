@@ -40,30 +40,52 @@ export {
 } from "./buttons";
 
 export {
+  Checkbox,
+  CheckboxGroup,
+  CheckboxRadioGroup,
+  DataList,
+  Datalist,
   DateInput,
-  // match the style guide naming "DatePicker":
-  // https://wet-boew.github.io/v4.0-ci/docs/ref/datepicker/datepicker-en.html
-  DateInput as DatePicker,
+  DatePicker,
   EmailInput,
+  FileInput,
   Form,
   FormControl,
   FormGroup,
+  InlineCheckbox,
+  InlineRadio,
   InputLabel,
   NumberInput,
   PasswordInput,
+  Radio,
+  RadioGroup,
+  SearchInput,
+  Select,
+  SubmitButton,
   TelInput,
+  TextArea,
   TextInput,
   UrlInput,
-  SubmitButton,
 } from "./forms";
+
 export type {
-  DateInputProps as DatePickerProps,
+  CheckboxRadioGroupProps,
+  CheckboxGroupProps,
+  RadioGroupProps,
+  CheckboxProps,
+  DatePickerProps,
+  DataListProps,
+  DatalistProps,
   DateInputProps,
   EmailInputProps,
+  FileInputProps,
   FormControlProps,
   NumberInputProps,
   PasswordInputProps,
+  ResetButtonProps,
+  SearchInputProps,
   TelInputProps,
+  TextAreaProps,
   TextInputProps,
   UrlInputProps,
 } from "./forms";
@@ -107,3 +129,4 @@ export type {
 } from "./cdts";
 
 export type { ButtonProps, ButtonVariant, HtmlButtonProps } from "./buttons";
+export type { Variant } from "./Variant";

@@ -1,24 +1,25 @@
+import { Language } from "../language";
+import React, { forwardRef } from "react";
 import { InputLabel } from "./InputLabel";
 
-export type HtmlInputProps = React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
+export type HtmlInputProps = Omit<
+  React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >,
+  | "ref" // remove legacy ref type
+  | "className" // remove className type
 >;
 
 // make id mandatory
 export interface FormControlProps extends HtmlInputProps {
   id: string;
-  language: "en" | "fr";
+  language?: Language | null;
   label?: string;
 }
 
-export function FormControl({
-  id,
-  label,
-  language,
-  ...props
-}: FormControlProps) {
-  return (
+export const FormControl = forwardRef<HTMLInputElement, FormControlProps>(
+  ({ id, label, language, ...props }: FormControlProps, ref) => (
     <>
       {label && (
         <InputLabel
@@ -29,7 +30,7 @@ export function FormControl({
           required={props.required}
         />
       )}
-      <input id={id} {...props} className="form-control" />
+      <input id={id} ref={ref} {...props} className="form-control" />
     </>
-  );
-}
+  )
+);

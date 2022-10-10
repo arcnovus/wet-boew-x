@@ -1,0 +1,21 @@
+import { Meta } from "@storybook/addon-docs";
+import { PageTitle } from "../src";
+
+<Meta title="Instructions/Custom Components" />
+
+# Custom Components
+
+The components included with WBR strive to implement the standard WET library of
+components strictly according to the [WET style guide](https://wet-boew.github.io/wet-boew-styleguide/index-en.html).
+However, there may be times when you need to implement a component that is not
+included in WET or implement a slight variation on an existing WET component.
+In these cases, you can create your own custom components.
+
+WBR injects all the WET CSS in your application via the `<WetProvider>` so
+you can use any of the WET CSS classes in your custom components. You can also take
+advantage of the WET JavaScript although it may be preferable to do things in a
+more react-fiendly way rather than leaning on the outdated jQuery approach of the
+WET JavaScript.
+
+A word of caution, WET works hard to be as accessibility friendly as possible.
+When customizing or building your own components, accessibility is your responsibility.

@@ -1,5 +1,8 @@
-import { HtmlButtonProps, Button } from "./Button";
+import React, { forwardRef } from "react";
+import { ButtonProps, Button } from "./Button";
 
-export const DefaultButton = (props: HtmlButtonProps) => (
-  <Button variant="default" {...props} />
+export const DefaultButton = forwardRef(
+  (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => (
+    <Button ref={ref} variant="default" {...props} />
+  )
 );

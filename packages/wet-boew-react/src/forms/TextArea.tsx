@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+import { Language } from "../language";
 import { InputLabel } from "./InputLabel";
 
 export type HtmlTextAreaProps = React.DetailedHTMLProps<
@@ -8,12 +10,12 @@ export type HtmlTextAreaProps = React.DetailedHTMLProps<
 // make id mandatory
 export interface TextAreaProps extends HtmlTextAreaProps {
   id: string;
-  language: "en" | "fr";
+  language?: Language;
   label?: string;
 }
 
-export function TextArea({ id, label, language, ...props }: TextAreaProps) {
-  return (
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
+  ({ id, label, language, ...props }, ref) => (
     <>
       {label && (
         <InputLabel
@@ -24,7 +26,7 @@ export function TextArea({ id, label, language, ...props }: TextAreaProps) {
           required={props.required}
         />
       )}
-      <textarea id={id} value="hhh" {...props} className="form-control" />
+      <textarea id={id} ref={ref} {...props} className="form-control" />
     </>
-  );
-}
+  )
+);

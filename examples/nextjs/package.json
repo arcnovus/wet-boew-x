@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@arcnovus/wet-boew-react": "^1.0.15-alpha.4",
+    "@arcnovus/wet-boew-react": "^2.0.0-alpha.0",
     "next": "^12.1.0",
     "next-i18next": "^10.3.0",
     "next-transpile-modules": "^9.0.0",

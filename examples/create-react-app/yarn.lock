@@ -15,20 +15,20 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@arcnovus/wet-boew-react@^1.0.15-alpha.5":
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-react/-/wet-boew-react-1.0.15.tgz#9c53e25c92df6aed5d0d3e04fb31ead90c1d2e74"
-  integrity sha512-pcRk3sKuHr8Vu2jOfAks6UFeLR9gFt5dPboJ8FR/rfs7WOcopg45wCP1AGWz69/6Ga6H8sCAmb+3ZHGQk2cPWw==
+"@arcnovus/wet-boew-react@^2.0.0-alpha.0":
+  version "2.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-react/-/wet-boew-react-2.0.0-alpha.0.tgz#0806c8d5af94afa8845f3b7c868ce989f0d43205"
+  integrity sha512-trGJpal4pE+1o537YflQe6k2AgjCzGQmqPgCcUSsLNCzL+PVNP/u2UFw+AsCjuO87lhbaB7gagvU28xvty3GLA==
   dependencies:
-    "@arcnovus/wet-boew-utils" "^1.0.15-aplha.4"
+    "@arcnovus/wet-boew-utils" "^1.1.0-aplha.0"
     "@types/datatables.net" "^1.10.20"
     deepmerge "^4.2.2"
     tslib "^2.3.0"
 
-"@arcnovus/wet-boew-utils@^1.0.15-aplha.4":
-  version "1.0.15-aplha.4"
-  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-utils/-/wet-boew-utils-1.0.15-aplha.4.tgz#78ada4b72811301f0022ad240dedc904a3387702"
-  integrity sha512-HG9LTheROzFfumRjD/cx0GaYb2xtdCRAYMm+gQZn+Y67EUg/5iKTts+WHdRerLHo/m53oc0HpMfh2uiA7c7GWw==
+"@arcnovus/wet-boew-utils@^1.1.0-aplha.0":
+  version "1.1.0-aplha.0"
+  resolved "https://registry.yarnpkg.com/@arcnovus/wet-boew-utils/-/wet-boew-utils-1.1.0-aplha.0.tgz#8a6f4ee21691fab33a7d161da8bc4ddcfc94af58"
+  integrity sha512-x8Ac7DsrSzEyXlLPndXJ1r5+sekUxnBeYqdS3F5qgGqquG9PYIAGCwSRtjohu18BqJ4OtwssxlxDqnkBWOMlgA==
   dependencies:
     deepmerge "^4.2.2"
     tslib "^2.3.0"

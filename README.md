@@ -7,6 +7,6 @@ like React.js.
 ## 🚨🚨 DISCLAIMER 🚨🚨
 
 **The contents of this repo are in use at several Government of Canada departments;
-however, they remains independent, experimental, open source projects that are not
+however, this remains independent, experimental, open source projects that are not
 officially supported or endorsed by the Government of Canada at this time.
 Use at your own risk.**

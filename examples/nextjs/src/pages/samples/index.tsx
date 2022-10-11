@@ -26,6 +26,9 @@ export default function Samples() {
         <li>
           <a href={`/samples/breadcrumbs`}>{t("breadcrumbs")}</a>
         </li>
+        <li>
+          <a href={`/samples/form`}>{t("form")}</a>
+        </li>
       </ul>
       <h3>{t("appTemplates")}</h3>
       <ul>

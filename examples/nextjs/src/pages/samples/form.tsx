@@ -27,7 +27,7 @@ export default function FormExample() {
                 value: "CA",
               },
               {
-                label: "United States of America",
+                label: "United States",
                 value: "US",
               },
               {

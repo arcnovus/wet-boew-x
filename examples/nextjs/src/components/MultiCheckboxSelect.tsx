@@ -9,6 +9,7 @@ export type MultiCheckboxSelectProps = React.DetailedHTMLProps<
   label: string;
   required?: boolean;
   selectionLabel?: string;
+  width?: string;
   options: Array<{ label: string; value: string }>;
 };
 
@@ -112,7 +113,7 @@ export function MultiCheckboxSelect({
         onClick={onClick}
         tabIndex={0}
         style={{
-          width: "229px",
+          width: props.width ?? "229px",
           cursor: "pointer",
           border: "solid 1px #ccc",
           height: "37px",
@@ -138,7 +139,7 @@ export function MultiCheckboxSelect({
         className="form-group list-unstyled"
         aria-hidden={display === "none"}
         style={{
-          width: "229px",
+          width: props.width ?? "229px",
           visibility: display === "none" ? "hidden" : "visible",
           border: "solid 1px #ccc",
           borderTop: "none",

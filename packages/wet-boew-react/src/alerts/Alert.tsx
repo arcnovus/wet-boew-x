@@ -6,13 +6,11 @@ export type AlertVariant = Pick<
   "info" & "success" & "warning" & "danger"
 >;
 
-export const Alert = forwardRef(
-  (
-    { children, variant }: React.PropsWithChildren<{ variant: AlertVariant }>,
-    ref: Ref<HTMLDivElement>
-  ) => (
-    <div className={`alert alert-${variant}`} ref={ref}>
-      {children}
-    </div>
-  )
-);
+export const Alert = forwardRef<
+  HTMLDivElement,
+  React.PropsWithChildren<{ variant: AlertVariant }>
+>(({ children, variant }, ref) => (
+  <div className={`alert alert-${variant}`} ref={ref}>
+    {children}
+  </div>
+));

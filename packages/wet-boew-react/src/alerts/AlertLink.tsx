@@ -5,11 +5,8 @@ export type AlertLinkProps = Omit<
   "ref"
 >;
 
-export const AlertLink = forwardRef(
-  (
-    { children, className }: AlertLinkProps,
-    ref: Ref<HTMLAnchorElement>
-  ): JSX.Element => (
+export const AlertLink = forwardRef<HTMLAnchorElement, AlertLinkProps>(
+  ({ children, className }, ref): JSX.Element => (
     <a
       style={{ cursor: "pointer", textDecoration: "underline" }}
       className={`alert-link ${className ?? ""}`.trim()}

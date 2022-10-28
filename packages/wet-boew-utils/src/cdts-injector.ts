@@ -218,7 +218,7 @@ function computeCdtsWetScriptUrl(options: {
 
 function computeJqueryScriptUrl(options: { version: CdtsVersion }) {
   const version = normalizeCdtsVersion(options.version);
-  return `https://www.canada.ca/etc/designs/canada/cdts/gcweb/${version}/js/jquery/2.2.4/jquery.min.js`;
+  return `https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/js/jquery/2.2.4/jquery.min.js`;
 }
 
 export function normalizeCdtsVersion(version: CdtsVersion) {

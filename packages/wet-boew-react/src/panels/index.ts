@@ -1,4 +1,11 @@
-export { Panel, PanelPaddedContent } from "./Panel";
+export {
+  Panel,
+  PanelTitle,
+  PanelHeader,
+  PanelFooter,
+  PanelPaddedContent,
+  PanelBody,
+} from "./Panel";
 export type { PanelProps } from "./Panel";
 export { DangerPanel } from "./DangerPanel";
 export { DefaultPanel } from "./DefaultPanel";

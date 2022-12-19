@@ -56,5 +56,11 @@ function PanelFooter({ children }: PropsWithChildren<{}>) {
   return <footer className="panel-footer">{children}</footer>;
 }
 
-export { Panel };
-export { PanelBody as PanelPaddedContent };
+export {
+  Panel,
+  PanelTitle,
+  PanelTitle as PanelHeader,
+  PanelFooter,
+  PanelBody as PanelPaddedContent,
+  PanelBody,
+};

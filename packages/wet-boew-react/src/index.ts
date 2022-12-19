@@ -92,8 +92,12 @@ export type {
 
 export {
   Panel,
-  DefaultPanel,
+  PanelTitle,
+  PanelHeader,
+  PanelFooter,
   PanelPaddedContent,
+  PanelBody,
+  DefaultPanel,
   DangerPanel,
   InfoPanel,
   PrimaryPanel,

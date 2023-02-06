@@ -10,6 +10,7 @@ export {
   SplashContent,
   SplashTop,
   Top,
+  useCdts,
   AfterCdts,
 } from "./cdts";
 export { Language, useLanguage, useLngLinks } from "./language";

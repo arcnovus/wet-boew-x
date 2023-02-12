@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/**"
+    "dist/**/*"
   ],
   "repository": "https://github.com/arcnovus/wet-booew-x/tree/main/packages/wet-boew-react",
   "author": "Bill Sourour (bill.sourour@arcnovus.com)",
@@ -64,7 +64,7 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@arcnovus/wet-boew-utils": "^2.0.0-beta.3",
+    "@arcnovus/wet-boew-utils": "^2.0.0-beta.4",
     "@types/datatables.net": "^1.10.20",
     "deepmerge": "^4.2.2",
     "tslib": "^2.3.0"

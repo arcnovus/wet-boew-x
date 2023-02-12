@@ -1,6 +1,6 @@
 {
   "name": "@arcnovus/wet-boew-utils",
-  "version": "2.0.0-beta.2",
+  "version": "2.0.0-beta.7",
   "description": "Utils for adding CDTS to Modern JS Frameworks like React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "private": false,
   "files": [
-    "**/dist/**"
+    "dist/**"
   ],
   "keywords": [
     "WET",
@@ -40,6 +40,10 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "deepmerge": "^4.2.2",
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
     "deepmerge": "^4.2.2",
     "tslib": "^2.3.0"
   }

@@ -46,7 +46,7 @@ export async function injectCdtsResources({
 
 function injectJquery({ version }: { version: CdtsVersion }) {
   const elem = document.createElement("script");
-  elem.src = computeJqueryScriptUrl({ version });
+  elem.src = computeJqueryScriptUrl();
   return injectElement({
     elem,
     placement: "head",
@@ -216,8 +216,9 @@ function computeCdtsWetScriptUrl(options: {
   return `https://www.canada.ca/etc/designs/canada/cdts/gcweb/${version}/cdts/compiled/wet-${language}.js`;
 }
 
-function computeJqueryScriptUrl(options: { version: CdtsVersion }) {
-  const version = normalizeCdtsVersion(options.version);
+function computeJqueryScriptUrl(/*options: { version: CdtsVersion }*/) {
+  // CDTS doesn't respect the version attribute for jQuery
+  // const version = normalizeCdtsVersion(options.version);
   return `https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/js/jquery/2.2.4/jquery.min.js`;
 }
 

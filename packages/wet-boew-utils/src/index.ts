@@ -1,7 +1,7 @@
 export { onAnchorClick } from "./routing";
 export { patchSearch } from "./search";
 export { setDocumentTitle } from "./page-meta";
-export { registerWetComponent } from "./wet";
+export { registerWetComponent, wbDateFormat } from "./wet";
 export { inBrowser } from "./dom";
 export {
   injectCdtsRefFooter,

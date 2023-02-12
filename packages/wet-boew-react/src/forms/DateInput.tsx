@@ -3,6 +3,7 @@ import { useLanguage } from "../language";
 import type { FormControlProps } from "./FormControl";
 import { FormGroup } from "./FormGroup";
 import { InputLabel } from "./InputLabel";
+import { wbDateFormat } from "../wet";
 
 export type DateInputProps = Omit<FormControlProps, "type" | "min" | "max"> & {
   max?: Date;
@@ -21,6 +22,7 @@ export const DateInput = forwardRef<HTMLInputElement, DateInputProps>(
   ({ min, max, label, id, language, dateHint, ...props }, ref) => {
     let { currentLanguage } = useLanguage();
     language = language ?? currentLanguage;
+
     return (
       <FormGroup>
         {label != null && (
@@ -51,8 +53,8 @@ export const DateInput = forwardRef<HTMLInputElement, DateInputProps>(
           type="date"
           ref={ref}
           {...props}
-          min={min?.toLocaleDateString("en-CA")}
-          max={max?.toLocaleDateString("en-CA")}
+          min={min ? wbDateFormat(min) : undefined}
+          max={max ? wbDateFormat(max) : undefined}
         />
       </FormGroup>
     );

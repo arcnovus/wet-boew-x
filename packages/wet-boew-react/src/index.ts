@@ -14,7 +14,7 @@ export {
 } from "./cdts";
 export { Language, useLanguage, useLngLinks } from "./language";
 export { Heading, H1, H2, H3, H4, H5, H6, PageTitle } from "./headings";
-export { WetProvider, useWetComponent } from "./wet";
+export { WetProvider, useWetComponent, wbDateFormat } from "./wet";
 export { Badge } from "./badges";
 export type { BadgeProps } from "./badges";
 export {

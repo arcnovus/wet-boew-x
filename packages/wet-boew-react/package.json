@@ -28,7 +28,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006 -s public --quiet",
-    "build-storybook": "build-storybook -s public --quiet"
+    "build-storybook": "build-storybook -s public --quiet --docs"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",

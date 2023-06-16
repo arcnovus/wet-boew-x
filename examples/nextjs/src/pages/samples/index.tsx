@@ -29,6 +29,9 @@ export default function Samples() {
         <li>
           <a href={`/samples/form`}>{t("form")}</a>
         </li>
+        <li>
+          <a href={`/samples/dynamic-error-msg`}>{t("dynamic-error-msg")}</a>
+        </li>
       </ul>
       <h3>{t("appTemplates")}</h3>
       <ul>
